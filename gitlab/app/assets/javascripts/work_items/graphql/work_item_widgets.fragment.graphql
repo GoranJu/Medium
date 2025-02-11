@@ -1,0 +1,114 @@
+#import "~/graphql_shared/fragments/label.fragment.graphql"
+#import "~/graphql_shared/fragments/user.fragment.graphql"
+#import "~/work_items/graphql/milestone.fragment.graphql"
+#import "~/work_items/graphql/timelog.fragment.graphql"
+
+fragment WorkItemWidgets on WorkItemWidget {
+  type
+  ... on WorkItemWidgetDescription {
+    description
+    descriptionHtml
+    lastEditedAt
+    lastEditedBy {
+      name
+      webPath
+    }
+    taskCompletionStatus {
+      completedCount
+      count
+    }
+  }
+  ... on WorkItemWidgetAssignees {
+    allowsMultipleAssignees
+    canInviteMembers
+    assignees {
+      nodes {
+        ...User
+      }
+    }
+  }
+  ... on WorkItemWidgetLabels {
+    labels {
+      nodes {
+        ...Label
+      }
+    }
+  }
+  ... on WorkItemWidgetStartAndDueDate {
+    dueDate
+    startDate
+  }
+  ... on WorkItemWidgetTimeTracking {
+    timeEstimate
+    timelogs {
+      nodes {
+        ...TimelogFragment
+      }
+    }
+    totalTimeSpent
+  }
+  ... on WorkItemWidgetHierarchy {
+    hasChildren
+    hasParent
+    rolledUpCountsByType {
+      countsByState {
+        opened
+        all
+        closed
+      }
+      workItemType {
+        id
+        name
+        iconName
+      }
+    }
+    parent {
+      id
+      iid
+      title
+      confidential
+      webUrl
+      workItemType {
+        id
+        name
+        iconName
+      }
+    }
+  }
+  ... on WorkItemWidgetMilestone {
+    milestone {
+      ...MilestoneFragment
+    }
+  }
+  ... on WorkItemWidgetNotes {
+    discussionLocked
+  }
+  ... on WorkItemWidgetNotifications {
+    subscribed
+  }
+  ... on WorkItemWidgetCurrentUserTodos {
+    currentUserTodos(state: pending) {
+      nodes {
+        id
+      }
+    }
+  }
+  ... on WorkItemWidgetCrmContacts {
+    contacts {
+      nodes {
+        id
+        email
+        firstName
+        lastName
+        phone
+        description
+        organization {
+          id
+          name
+          description
+          defaultRate
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,9 @@
+---
+name: audit_events_api_offset_optimization
+feature_issue_url: https://gitlab.com/gitlab-org/gitlab/-/issues/460264
+introduced_by_url: https://gitlab.com/gitlab-org/gitlab/-/merge_requests/178619
+rollout_issue_url: https://gitlab.com/gitlab-org/gitlab/-/issues/514255
+milestone: '17.9'
+group: group::compliance
+type: beta
+default_enabled: false

@@ -1,0 +1,18 @@
+- linked_configurations = security_configurations_preventing_project_deletion(@project)
+
+- if linked_configurations.none?
+  %p= delete_delayed_message(@project)
+  - if @project.feature_available?(:adjourned_deletion_for_projects_and_groups)
+    #js-project-delayed-delete-button{ data: project_delete_delayed_button_data(@project) }
+  - else
+    -# This is a free project, it will use delayed deletion but can only be restored by an admin.
+    -# Use the standard delete button so there is no message about it being able to be restored.
+    #js-project-delete-button{ data: project_delete_delayed_button_data(@project) }
+- else
+  %p= s_("SecurityOrchestration|Project cannot be deleted because it is linked as a security policy project")
+  %p= s_("SecurityOrchestration|Unlink the project from the following containers:")
+  %ul
+    - linked_configurations.each do |configuration|
+      %li
+        = link_to(configuration.project&.name || configuration.namespace&.name, security_policies_path(configuration.project || configuration.namespace))
+  #js-project-delete-button{ data: project_delete_delayed_button_data(@project, is_security_policy_project: true) }

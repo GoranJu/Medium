@@ -1,0 +1,9 @@
+---
+name: use_approval_policy_rules_for_approval_rules
+feature_issue_url: https://gitlab.com/gitlab-org/gitlab/-/issues/464034
+introduced_by_url: https://gitlab.com/gitlab-org/gitlab/-/merge_requests/169700
+rollout_issue_url: https://gitlab.com/gitlab-org/gitlab/-/issues/474468
+milestone: '17.6'
+group: group::security policies
+type: beta
+default_enabled: false

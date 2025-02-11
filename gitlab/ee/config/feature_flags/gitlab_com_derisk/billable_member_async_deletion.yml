@@ -1,0 +1,9 @@
+---
+name: billable_member_async_deletion
+feature_issue_url: https://gitlab.com/gitlab-org/gitlab/-/issues/501249
+introduced_by_url: https://gitlab.com/gitlab-org/gitlab/-/merge_requests/172505
+rollout_issue_url: https://gitlab.com/gitlab-org/gitlab/-/issues/504323
+milestone: '17.7'
+group: group::utilization
+type: gitlab_com_derisk
+default_enabled: false

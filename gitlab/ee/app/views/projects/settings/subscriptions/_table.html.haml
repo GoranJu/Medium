@@ -1,0 +1,49 @@
+- is_upstream_mode = mode == "upstream"
+- title = is_upstream_mode ? _("Subscriptions") : _("Subscribed to this project")
+- count = is_upstream_mode ? @project.upstream_projects_count : @project.downstream_projects_count
+- subscriptions = is_upstream_mode ? @project.upstream_project_subscriptions : @project.downstream_project_subscriptions
+- empty_text = is_upstream_mode ? _("This project is not subscribed to any project pipelines.") : _("No project subscribes to the pipelines in this project.")
+- hide_class = 'gl-hidden' if form_errors(@project)
+
+= render ::Layouts::CrudComponent.new(title,
+  icon: 'pipeline',
+  count: count,
+  form_options: { class: 'gl-hidden js-toggle-content', form_errors: form_errors(@project) },
+  options: { class: 'gl-mt-5 js-toggle-container', data: { testid: "#{mode}-project-subscriptions" } }) do |c|
+  - c.with_actions do
+    - if is_upstream_mode
+      = render Pajamas::ButtonComponent.new(size: :small, button_options: { class: "js-toggle-button js-toggle-content #{hide_class}", data: { testid: "crud-form-toggle" } }) do
+        = _('Add new')
+
+  - c.with_form do
+    - if is_upstream_mode
+      %h4.gl-mt-0
+        = _('Add new pipeline subscription')
+      = form_with url: project_subscriptions_path(@project), id: 'pipeline-subscriptions-form', method: :post, authenticity_token: true do |f|
+        %fieldset
+          .form-group
+            = f.label :upstream_project_path do
+              = _("Project path")
+              = link_to sprite_icon('question-o'), help_page_path('ci/pipelines/_index.md', anchor: 'trigger-a-pipeline-when-an-upstream-project-is-rebuilt-deprecated'), target: '_blank', rel: 'noopener noreferrer'
+            = f.text_field :upstream_project_path, class: "form-control", data: { testid: "upstream-project-path-field" }
+          .gl-flex.gl-gap-3.gl-mt-3
+            = render Pajamas::ButtonComponent.new(variant: :confirm, type: :submit, button_options: { data: { testid: "subscribe-button" } }) do
+              = _('Subscribe')
+            = render Pajamas::ButtonComponent.new(button_options: { type: 'reset', class: 'js-toggle-button' }) do
+              = _('Cancel')
+
+  - c.with_body do
+    %table.table.b-table.gl-table.b-table-stacked-md{ role: 'table' }
+      %thead
+        %tr
+          %th.gl-w-15{ class: 'md:gl-w-1/2' }= _("Project")
+          %th= _("Namespace")
+          %th
+      %tbody
+        - if count > 0
+          - subscriptions.each do |subscription|
+            - subscription_project = is_upstream_mode ? subscription.upstream_project : subscription.downstream_project
+            = render 'projects/settings/subscriptions/project', project: subscription_project, subscription: subscription, mode: mode
+        - else
+          %tr
+            %td.gl-text-center{ colspan: 3, class: '!gl-text-subtle' }= empty_text

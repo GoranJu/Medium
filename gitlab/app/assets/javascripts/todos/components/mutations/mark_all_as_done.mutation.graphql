@@ -1,0 +1,23 @@
+mutation markAllAsDone(
+  $projectId: [ID!]
+  $groupId: [ID!]
+  $authorId: [ID!]
+  $action: [TodoActionEnum!]
+  $type: [TodoTargetEnum!]
+) {
+  markAllAsDone: todosMarkAllDone(
+    input: {
+      projectId: $projectId
+      groupId: $groupId
+      authorId: $authorId
+      action: $action
+      type: $type
+    }
+  ) {
+    todos {
+      id
+      state
+    }
+    errors
+  }
+}

@@ -1,0 +1,9 @@
+---
+name: owned_runners_via_admin_runners
+feature_issue_url: https://gitlab.com/gitlab-org/gitlab/-/issues/477585
+introduced_by_url: https://gitlab.com/gitlab-org/gitlab/-/merge_requests/162215
+rollout_issue_url: https://gitlab.com/gitlab-org/gitlab/-/issues/478064
+milestone: '17.3'
+group: group::authorization
+type: beta
+default_enabled: false

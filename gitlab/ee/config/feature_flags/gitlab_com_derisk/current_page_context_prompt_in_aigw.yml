@@ -1,0 +1,9 @@
+---
+name: current_page_context_prompt_in_aigw
+feature_issue_url: https://gitlab.com/gitlab-org/gitlab/-/issues/508317
+introduced_by_url: https://gitlab.com/gitlab-org/gitlab/-/merge_requests/177622
+rollout_issue_url: https://gitlab.com/gitlab-org/gitlab/-/issues/517316
+milestone: '17.9'
+group: group::duo chat
+type: gitlab_com_derisk
+default_enabled: false

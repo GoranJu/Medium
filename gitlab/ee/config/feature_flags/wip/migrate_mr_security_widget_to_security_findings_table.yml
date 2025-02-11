@@ -1,0 +1,9 @@
+---
+name: migrate_mr_security_widget_to_security_findings_table
+feature_issue_url: https://gitlab.com/gitlab-org/gitlab/-/issues/390185
+introduced_by_url: https://gitlab.com/gitlab-org/gitlab/-/merge_requests/151358
+rollout_issue_url:
+milestone: '17.7'
+group: group::security infrastructure
+type: wip
+default_enabled: false

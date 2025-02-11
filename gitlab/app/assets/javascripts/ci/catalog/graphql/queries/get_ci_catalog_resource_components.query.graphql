@@ -1,0 +1,25 @@
+query getCiCatalogResourceComponents($fullPath: ID!) {
+  ciCatalogResource(fullPath: $fullPath) {
+    id
+    webPath
+    versions(first: 1) {
+      nodes {
+        id
+        components {
+          nodes {
+            id
+            name
+            includePath
+            inputs {
+              name
+              default
+              description
+              required
+              type
+            }
+          }
+        }
+      }
+    }
+  }
+}

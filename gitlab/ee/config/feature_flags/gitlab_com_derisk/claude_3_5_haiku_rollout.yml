@@ -1,0 +1,9 @@
+---
+name: claude_3_5_haiku_rollout
+feature_issue_url: https://gitlab.com/gitlab-org/gitlab/-/issues/500421
+introduced_by_url: https://gitlab.com/gitlab-org/gitlab/-/merge_requests/171918
+rollout_issue_url: https://gitlab.com/gitlab-org/gitlab/-/issues/502925
+milestone: '17.6'
+group: group::ai framework
+type: gitlab_com_derisk
+default_enabled: false

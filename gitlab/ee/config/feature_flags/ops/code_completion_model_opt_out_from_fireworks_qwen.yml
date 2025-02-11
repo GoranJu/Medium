@@ -1,0 +1,9 @@
+---
+name: code_completion_model_opt_out_from_fireworks_qwen
+feature_issue_url: https://gitlab.com/gitlab-org/gitlab/-/issues/509365
+introduced_by_url: https://gitlab.com/gitlab-org/gitlab/-/merge_requests/176841
+rollout_issue_url: https://gitlab.com/gitlab-org/gitlab/-/issues/512003
+milestone: '17.8'
+group: group::code creation
+type: ops
+default_enabled: false

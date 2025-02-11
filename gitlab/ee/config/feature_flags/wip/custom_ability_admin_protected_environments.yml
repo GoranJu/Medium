@@ -1,0 +1,9 @@
+---
+name: custom_ability_admin_protected_environments
+feature_issue_url: https://gitlab.com/gitlab-org/gitlab/-/issues/471385
+introduced_by_url: https://gitlab.com/gitlab-org/gitlab/-/merge_requests/178283
+rollout_issue_url: https://gitlab.com/gitlab-org/gitlab/-/issues/514698
+milestone: '17.9'
+group: group::authorization
+type: wip
+default_enabled: false

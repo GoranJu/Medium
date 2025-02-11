@@ -1,0 +1,19 @@
+query getRemoteDevelopmentClusterAgents($namespace: ID!) {
+  namespace(fullPath: $namespace) {
+    id
+    remoteDevelopmentClusterAgents(filter: AVAILABLE) {
+      nodes {
+        id
+        name
+        project {
+          id
+          nameWithNamespace
+        }
+        workspacesAgentConfig {
+          id
+          defaultMaxHoursBeforeTermination
+        }
+      }
+    }
+  }
+}

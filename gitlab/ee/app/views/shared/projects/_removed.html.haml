@@ -1,0 +1,7 @@
+- if can?(current_user, :list_removable_projects) && scheduled_for_deletion?(project)
+  .gl-flex.gl-items-center.gl-flex-wrap.project-title
+    %span.small
+      = _("Marked For Deletion At - %{deletion_time}") % { deletion_time: project.marked_for_deletion_at.strftime(Date::DATE_FORMATS[:medium]) }
+  .gl-flex.gl-items-center.gl-flex-wrap.project-title
+    %p.small
+      = _("Scheduled Deletion At - %{permanent_deletion_time}") % { permanent_deletion_time: DateTime.parse(permanent_deletion_date_formatted(project, project.marked_for_deletion_at)).strftime(Date::DATE_FORMATS[:medium]) }

@@ -1,0 +1,12 @@
+---
+table_name: ci_runner_versions
+classes:
+- Ci::RunnerVersion
+feature_categories:
+- fleet_visibility
+description: Information about used Ci::Runner versions
+introduced_by_url: https://gitlab.com/gitlab-org/gitlab/-/merge_requests/90982
+milestone: '15.2'
+gitlab_schema: gitlab_ci
+exempt_from_sharding: true
+table_size: small

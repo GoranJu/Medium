@@ -1,0 +1,9 @@
+---
+name: code_suggestions_include_context_imports
+feature_issue_url: https://gitlab.com/gitlab-org/gitlab/-/issues/512976
+introduced_by_url: https://gitlab.com/gitlab-org/gitlab/-/merge_requests/178402
+rollout_issue_url: https://gitlab.com/gitlab-org/gitlab/-/issues/514124
+milestone: '17.9'
+group: group::code creation
+type: beta
+default_enabled: false

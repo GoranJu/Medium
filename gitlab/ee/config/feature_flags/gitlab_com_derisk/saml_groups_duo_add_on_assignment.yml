@@ -1,0 +1,9 @@
+---
+name: saml_groups_duo_add_on_assignment
+feature_issue_url: https://gitlab.com/gitlab-org/gitlab/-/issues/480766
+introduced_by_url: https://gitlab.com/gitlab-org/gitlab/-/merge_requests/174021
+rollout_issue_url: https://gitlab.com/gitlab-org/gitlab/-/issues/500745
+milestone: '17.7'
+group: group::authentication
+type: gitlab_com_derisk
+default_enabled: false

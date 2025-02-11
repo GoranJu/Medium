@@ -1,0 +1,2 @@
+%p
+  = _('%{strong_start}%{author}%{strong_end} has added you as an approver.').html_safe % { author: @merge_request.author.name, strong_start: '<strong>'.html_safe, strong_end: '</strong>'.html_safe }

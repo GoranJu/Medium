@@ -1,0 +1,9 @@
+---
+name: zoekt_scheduling_worker
+feature_issue_url: https://gitlab.com/gitlab-org/gitlab/-/issues/432693
+introduced_by_url: https://gitlab.com/gitlab-org/gitlab/-/merge_requests/141513
+rollout_issue_url: https://gitlab.com/gitlab-com/gl-infra/production/-/issues/17374
+milestone: '16.9'
+group: group::global search
+type: beta
+default_enabled: true

@@ -1,0 +1,9 @@
+---
+name: amazon_q_chat_and_code_suggestions
+feature_issue_url: https://gitlab.com/gitlab-org/gitlab/-/issues/515655
+introduced_by_url: https://gitlab.com/gitlab-org/gitlab/-/merge_requests/179440
+rollout_issue_url: https://gitlab.com/gitlab-org/gitlab/-/issues/515656
+milestone: '17.9'
+group: group::ai framework
+type: experiment
+default_enabled: false

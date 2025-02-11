@@ -1,0 +1,21 @@
+---
+data_category: optional
+key_path: counts.diff_searches
+description: Total count of merge request diff searches
+product_group: code_review
+product_categories:
+- code_review_workflow
+value_type: number
+status: active
+milestone: '14.2'
+introduced_by_url: https://gitlab.com/gitlab-org/gitlab/-/merge_requests/66522
+time_frame: all
+data_source: redis
+instrumentation_class: RedisMetric
+options:
+  prefix: diff
+  event: searches
+tiers:
+  - free
+  - premium
+  - ultimate

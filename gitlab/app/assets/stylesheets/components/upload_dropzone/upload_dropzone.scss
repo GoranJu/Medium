@@ -1,0 +1,74 @@
+@function encodecolor($string) {
+  @if type-of($string) == 'color' {
+    $hex: str-slice(ie-hex-str($string), 4);
+    $string: unquote('#{$hex}');
+  }
+  $string: '%23' + $string;
+  @return $string;
+}
+
+@mixin dropzone-background($stroke-color, $stroke-width: 4) {
+  background-image: url("data:image/svg+xml, %3csvg width='100%25' height='100%25' xmlns='http://www.w3.org/2000/svg'%3e%3crect width='100%25' height='100%25' fill='none' rx='#{$gl-border-radius-base}' ry='#{$gl-border-radius-base}' stroke='#{encodecolor($stroke-color)}' stroke-width='#{$stroke-width}' stroke-dasharray='6%2c4' stroke-dashoffset='0' stroke-linecap='butt' /%3e %3c/svg%3e");
+}
+
+.upload-dropzone-border {
+  border: 0;
+  @include dropzone-background($gray-400, 2);
+  border-radius: $gl-border-radius-base;
+}
+
+.upload-dropzone-card {
+  @apply gl-transition-[background,border];
+
+  @apply gl-text-default;
+
+  &:hover,
+  &:focus,
+  &:focus-within,
+  &:active {
+    outline: none;
+    @include dropzone-background($blue-500);
+    @apply gl-text-default;
+  }
+
+  &:focus,
+  &:focus-within,
+  &:active {
+    @apply gl-focus;
+  }
+
+  &:hover {
+    border-color: $gray-300;
+  }
+}
+
+.upload-dropzone-overlay,
+.design-upload-dropzone-overlay {
+  top: 0;
+  left: 0;
+  pointer-events: none;
+  opacity: 1;
+}
+
+.upload-dropzone-overlay {
+  background-color: $blue-50;
+  @include dropzone-background($blue-500);
+}
+
+.design-upload-dropzone-overlay {
+  background-color: rgba($blue-500, 0.24);
+}
+
+// These are composite classes for use with Vue Transition
+// https://vuejs.org/guide/built-ins/transition
+.upload-dropzone-fade-enter-active,
+.upload-dropzone-fade-leave-active {
+  @apply gl-transition-opacity;
+  @apply gl-duration-fast;
+  @apply gl-ease-linear;
+}
+
+.upload-dropzone-fade-enter,
+.upload-dropzone-fade-leave-to {
+  opacity: 0;
+}

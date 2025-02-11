@@ -1,0 +1,21 @@
+---
+table_name: operations_scopes
+classes:
+- Operations::FeatureFlags::Scope
+feature_categories:
+- feature_flags
+description: https://docs.gitlab.com/ee/operations/feature_flags.html#feature-flag-strategies
+introduced_by_url: https://gitlab.com/gitlab-org/gitlab/-/merge_requests/24819
+milestone: '12.8'
+gitlab_schema: gitlab_main_cell
+desired_sharding_key:
+  project_id:
+    references: projects
+    backfill_via:
+      parent:
+        foreign_key: strategy_id
+        table: operations_strategies
+        sharding_key: project_id
+        belongs_to: strategy
+table_size: small
+desired_sharding_key_migration_job_name: BackfillOperationsScopesProjectId

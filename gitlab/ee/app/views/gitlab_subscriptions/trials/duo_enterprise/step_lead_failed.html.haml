@@ -1,0 +1,4 @@
+- content_for :before_form do
+  = render 'form_errors', errors: trial_form_errors_message(@result)
+
+= render 'lead_form'

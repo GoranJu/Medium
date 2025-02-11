@@ -1,0 +1,24 @@
+- breadcrumb_title _("Security and compliance")
+- page_title _("Security and compliance")
+- add_page_specific_style 'page_bundles/settings'
+- @force_desktop_expanded_sidebar = true
+- @hide_search_settings = true
+
+= render ::Layouts::SettingsBlockComponent.new(_('License Compliance'),
+  id: 'js-license-compliance-settings',
+  testid: 'admin-license-compliance-settings',
+  expanded: expanded_by_default?) do |c|
+  - c.with_description do
+    = _('Settings for the License Compliance feature')
+  - c.with_body do
+    = render 'license_compliance'
+
+- if License.feature_available?(:secret_push_protection)
+  = render ::Layouts::SettingsBlockComponent.new(_('Secret Detection'),
+    id: 'js-secret-detection-settings',
+    testid: 'admin-secret-detection-settings',
+    expanded: expanded_by_default?) do |c|
+    - c.with_description do
+      = _('Manage secret detection behavior for all projects in your GitLab instance')
+    - c.with_body do
+      = render 'secret_push_protection'

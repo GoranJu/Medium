@@ -1,0 +1,14 @@
+fragment Role on RoleInterface {
+  id
+  name
+  description
+  usersCount
+
+  ... on StandardRole {
+    accessLevel
+  }
+
+  ... on MemberRole {
+    editPath
+  }
+}

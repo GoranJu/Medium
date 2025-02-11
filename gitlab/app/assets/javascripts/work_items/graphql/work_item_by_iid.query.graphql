@@ -1,0 +1,10 @@
+#import "./work_item.fragment.graphql"
+
+query namespaceWorkItem($fullPath: ID!, $iid: String!) {
+  workspace: namespace(fullPath: $fullPath) {
+    id
+    workItem(iid: $iid) {
+      ...WorkItem
+    }
+  }
+}

@@ -1,0 +1,2 @@
+- content_for :page_level_alert do
+  = render Namespaces::FreeUserCap::UnlimitedMembersDuringTrialAlertComponent.new(namespace: resource.root_ancestor, user: current_user, wrapper_class: [container_class, @content_class, '!gl-pt-5'])

@@ -1,0 +1,6 @@
+- title = _("We're sorry, your GitLab Duo Enterprise trial could not be created because our system did not respond successfully.")
+
+= render Pajamas::AlertComponent.new(variant: :danger, dismissible: false, title: title,
+    alert_options: { class: 'gl-mt-3 gl-mb-5' }) do |c|
+  - c.with_body do
+    = errors

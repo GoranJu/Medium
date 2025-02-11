@@ -1,0 +1,277 @@
+---
+# =============================
+# CLOUD CONNECTOR CONFIGURATION
+# =============================
+#
+# DEPRECATED
+# DO NOT UPDATE THIS FILE
+#
+# For new services or unit primitives, please add them to:
+# https://gitlab.com/gitlab-org/cloud-connector/gitlab-cloud-connector/-/tree/main/config
+services: # Cloud connector features (i.e. code_suggestions, duo_chat...)
+  anthropic_proxy:
+    backend: 'gitlab-ai-gateway'
+    cut_off_date: 2024-10-17 00:00:00 UTC
+    bundled_with:
+      duo_enterprise:
+        unit_primitives:
+          - categorize_duo_chat_question
+          - generate_commit_message
+          - generate_issue_description
+          - glab_ask_git_command
+          - resolve_vulnerability
+          - review_merge_request
+          - summarize_issue_discussions
+          - summarize_review
+  code_suggestions:
+    # The name of the backend who is serving this service. The name is used as a token audience claim.
+    backend: 'gitlab-ai-gateway'
+    # Represents the cut-off date when the service is no longer available for free (beta)
+    # If it's not set, the service is available for free (in beta) by default
+    # During free access period, all unit primitives will be available for free
+    cut_off_date: 2024-02-15 00:00:00 UTC
+    # Minimum required GitLab version to use the service. Ignored for Gitlab.com.
+    # If it's not set, the service is available for all GitLab versions
+    min_gitlab_version: '16.8'
+    # The group of UP that are bundled and sold together.
+    # Example: code_suggestions and duo_chat are 2 UP sold together under DUO_PRO add-on.
+    # Unit primitives from different services can be bundled and sold together under same add-on.
+    # The same UP can be also bundled with different add-ons.
+    bundled_with:
+      duo_pro:
+        # The smallest logical feature that a permission/access scope can govern. Currently,
+        # we have duo_chat and code_suggestions as UP. In the next iteration, we could split duo_chat to smaller
+        # unit_primitives. At the moment, unit_primitive name is used as a scope when ServiceToken is being issued
+        unit_primitives:
+          - complete_code
+          - generate_code
+      duo_enterprise:
+        unit_primitives:
+          - complete_code
+          - generate_code
+  duo_chat:
+    backend: 'gitlab-ai-gateway'
+    cut_off_date: 2024-10-17 00:00:00 UTC
+    min_gitlab_version_for_free_access: '16.8' # Ignored for Gitlab.com
+    min_gitlab_version: '16.9' # Ignored for Gitlab.com
+    bundled_with:
+      duo_pro:
+        unit_primitives:
+          - documentation_search
+          - duo_chat
+          - explain_code
+          - fix_code
+          - include_file_context
+          - include_snippet_context
+          - refactor_code
+          - write_tests
+      duo_enterprise:
+        unit_primitives:
+          - ask_build
+          - ask_commit
+          - ask_epic
+          - ask_issue
+          - ask_merge_request
+          - documentation_search
+          - duo_chat
+          - explain_code
+          - fix_code
+          - include_dependency_context
+          - include_file_context
+          - include_issue_context
+          - include_local_git_context
+          - include_merge_request_context
+          - include_snippet_context
+          - refactor_code
+          - write_tests
+  duo_workflow:
+    backend: 'gitlab-duo-workflow-service'
+    bundled_with:
+      _irrelevant:
+        unit_primitives:
+          - duo_workflow_execute_workflow
+  explain_vulnerability:
+    backend: 'gitlab-ai-gateway'
+    cut_off_date: 2024-10-17 00:00:00 UTC
+    bundled_with:
+      duo_enterprise:
+        unit_primitives:
+          - explain_vulnerability
+  generate_commit_message:
+    backend: 'gitlab-ai-gateway'
+    cut_off_date: 2024-10-17 00:00:00 UTC
+    bundled_with:
+      duo_enterprise:
+        unit_primitives:
+          - generate_commit_message
+  generate_description:
+    backend: 'gitlab-ai-gateway'
+    cut_off_date: 2024-10-17 00:00:00 UTC
+    bundled_with:
+      duo_enterprise:
+        unit_primitives:
+          - generate_issue_description
+  glab_ask_git_command:
+    backend: 'gitlab-ai-gateway'
+    cut_off_date: 2024-10-17 00:00:00 UTC
+    min_gitlab_version: '17.2' # Ignored for Gitlab.com
+    bundled_with:
+      duo_enterprise:
+        unit_primitives:
+          - glab_ask_git_command
+  include_dependency_context:
+    backend: 'gitlab-ai-gateway'
+    cut_off_date: 2024-10-17 00:00:00 UTC
+    bundled_with:
+      duo_enterprise:
+        unit_primitives:
+          - include_dependency_context
+  include_file_context:
+    backend: 'gitlab-ai-gateway'
+    cut_off_date: 2024-10-17 00:00:00 UTC
+    bundled_with:
+      duo_pro:
+        unit_primitives:
+          - include_file_context
+      duo_enterprise:
+        unit_primitives:
+          - include_file_context
+  include_issue_context:
+    backend: 'gitlab-ai-gateway'
+    cut_off_date: 2024-10-17 00:00:00 UTC
+    bundled_with:
+      duo_enterprise:
+        unit_primitives:
+          - include_issue_context
+  include_merge_request_context:
+    backend: 'gitlab-ai-gateway'
+    cut_off_date: 2024-10-17 00:00:00 UTC
+    bundled_with:
+      duo_enterprise:
+        unit_primitives:
+          - include_merge_request_context
+  include_snippet_context:
+    backend: 'gitlab-ai-gateway'
+    cut_off_date: 2024-10-17 00:00:00 UTC
+    bundled_with:
+      duo_pro:
+        unit_primitives:
+          - include_snippet_context
+      duo_enterprise:
+        unit_primitives:
+          - include_snippet_context
+  include_local_git_context:
+    backend: 'gitlab-ai-gateway'
+    cut_off_date: 2024-10-17 00:00:00 UTC
+    bundled_with:
+      duo_enterprise:
+        unit_primitives:
+          - include_local_git_context
+  observability_all:
+    backend: 'gitlab-observability-backend'
+    bundled_with:
+      _irrelevant:
+        unit_primitives:
+          - observability_all
+  resolve_vulnerability:
+    backend: 'gitlab-ai-gateway'
+    cut_off_date: 2024-10-17 00:00:00 UTC
+    bundled_with:
+      duo_enterprise:
+        unit_primitives:
+          - resolve_vulnerability
+  # Configured only for Gitlab.com
+  sast:
+    backend: 'gitlab-security-gateway'
+    bundled_with:
+      _irrelevant:
+        unit_primitives:
+          - security_scans
+  # Configured only for Gitlab.com
+  self_hosted_models:
+    backend: 'gitlab-ai-gateway'
+    cut_off_date: 2024-10-17 00:00:00 UTC
+    bundled_with:
+      duo_enterprise:
+        unit_primitives:
+          - ask_build
+          - ask_commit
+          - ask_epic
+          - ask_issue
+          - ask_merge_request
+          - complete_code
+          - documentation_search
+          - duo_chat
+          - explain_code
+          - fix_code
+          - generate_code
+          - include_dependency_context
+          - include_file_context
+          - include_issue_context
+          - include_local_git_context
+          - include_merge_request_context
+          - include_snippet_context
+          - refactor_code
+          - write_tests
+  summarize_comments:
+    backend: gitlab-ai-gateway
+    cut_off_date: '2024-10-17 00:00:00 UTC'
+    bundled_with:
+      duo_enterprise:
+        unit_primitives:
+          - summarize_comments
+  summarize_review:
+    backend: 'gitlab-ai-gateway'
+    cut_off_date: 2024-10-17 00:00:00 UTC
+    bundled_with:
+      duo_enterprise:
+        unit_primitives:
+          - summarize_review
+  troubleshoot_job:
+    backend: 'gitlab-ai-gateway'
+    cut_off_date: 2024-10-17 00:00:00 UTC
+    bundled_with:
+      duo_enterprise:
+        unit_primitives:
+          - troubleshoot_job
+  summarize_new_merge_request:
+    backend: 'gitlab-ai-gateway'
+    cut_off_date: 2024-10-17 00:00:00 UTC
+    bundled_with:
+      duo_enterprise:
+        unit_primitives:
+          - summarize_merge_request
+  generate_cube_query:
+    backend: 'gitlab-ai-gateway'
+    cut_off_date: 2024-10-17 00:00:00 UTC
+    bundled_with:
+      duo_enterprise:
+        unit_primitives:
+          - generate_cube_query
+  review_merge_request:
+    backend: 'gitlab-ai-gateway'
+    cut_off_date: 2024-10-17 00:00:00 UTC
+    bundled_with:
+      duo_enterprise:
+        unit_primitives:
+          - review_merge_request
+  vertex_ai_proxy:
+    backend: 'gitlab-ai-gateway'
+    cut_off_date: 2024-10-17 00:00:00 UTC
+    bundled_with:
+      duo_enterprise:
+        unit_primitives:
+          - generate_commit_message
+          - generate_cube_query
+          - glab_ask_git_command
+          - semantic_search_issue
+          - summarize_issue_discussions
+          - summarize_merge_request
+  amazon_q_integration:
+    backend: 'gitlab-ai-gateway'
+    bundled_with:
+      _irrelevant:
+        unit_primitives:
+          - amazon_q_integration
+    license_types:
+      - ultimate

@@ -1,0 +1,9 @@
+---
+name: update_sbom_occurrences_vulnerabilities_on_cvs
+feature_issue_url: https://gitlab.com/gitlab-org/gitlab/-/issues/500551
+introduced_by_url: https://gitlab.com/gitlab-org/gitlab/-/merge_requests/178456
+rollout_issue_url: https://gitlab.com/gitlab-org/gitlab/-/issues/514223
+milestone: '17.9'
+group: group::composition analysis
+type: gitlab_com_derisk
+default_enabled: false

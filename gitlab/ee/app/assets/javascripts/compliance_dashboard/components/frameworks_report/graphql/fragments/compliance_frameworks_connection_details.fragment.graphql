@@ -1,0 +1,71 @@
+#import "~/graphql_shared/fragments/page_info.fragment.graphql"
+
+fragment ComplianceFrameworkConnectionDetails on ComplianceFrameworkConnection {
+  nodes {
+    id
+    name
+    default
+    description
+    color
+    pipelineConfigurationFullPath
+    scanExecutionPolicies(first: 100) {
+      nodes {
+        name
+        source {
+          ... on GroupSecurityPolicySource {
+            namespace {
+              id
+              name
+              fullPath
+            }
+          }
+        }
+      }
+    }
+    scanResultPolicies(first: 100) {
+      nodes {
+        name
+        source {
+          ... on GroupSecurityPolicySource {
+            namespace {
+              id
+              name
+              fullPath
+            }
+          }
+        }
+      }
+    }
+    pipelineExecutionPolicies(first: 100) {
+      nodes {
+        name
+        source {
+          ... on GroupSecurityPolicySource {
+            namespace {
+              id
+              name
+              fullPath
+            }
+          }
+        }
+      }
+    }
+    vulnerabilityManagementPolicies(first: 100) {
+      nodes {
+        name
+        source {
+          ... on GroupSecurityPolicySource {
+            namespace {
+              id
+              name
+              fullPath
+            }
+          }
+        }
+      }
+    }
+  }
+  pageInfo {
+    ...PageInfo
+  }
+}

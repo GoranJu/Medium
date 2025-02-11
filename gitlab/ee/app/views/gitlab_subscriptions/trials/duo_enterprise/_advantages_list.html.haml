@@ -1,0 +1,12 @@
+- advantages = [s_('DuoEnterpriseTrial|Stay on top of regulatory requirements with self-hosted model deployment')]
+- advantages << s_('DuoEnterpriseTrial|Enhance security and remediate vulnerabilities efficiently')
+- advantages << s_('DuoEnterpriseTrial|Quickly remedy broken pipelines to deliver products faster')
+- advantages << s_('DuoEnterpriseTrial|Gain deeper insights into GitLab Duo usage patterns')
+- advantages << s_('DuoEnterpriseTrial|Maintain control and keep your data safe')
+
+= render GitlabSubscriptions::TrialAdvantagesComponent.new do |c|
+  - c.with_header do
+    = s_('DuoEnterpriseTrial|GitLab Duo Enterprise is is your end-to-end AI partner for faster, more secure software development.')
+  - c.with_advantages(advantages)
+  - c.with_footer do
+    = s_('DuoEnterpriseTrial|GitLab Duo Enterprise is only available for purchase for Ultimate customers.')

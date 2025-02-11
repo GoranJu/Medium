@@ -1,0 +1,7 @@
+- add_to_breadcrumbs _('Geo Sites'), admin_geo_nodes_path
+- add_to_breadcrumbs @replicator_class.replicable_title_plural, site_replicables_admin_geo_node_path
+- replicable_id = params[:replicable_id]
+- replicable_data = replicable_class_data(@replicator_class)
+- page_title replicable_id
+
+#js-geo-replicable-item{ data: { "replicable_item_id" => replicable_id, "graphql_field_name" => replicable_data[:graphql_field_name] } }

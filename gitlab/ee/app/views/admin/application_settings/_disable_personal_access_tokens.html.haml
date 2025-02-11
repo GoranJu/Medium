@@ -1,0 +1,8 @@
+- return unless ::License.feature_available?(:disable_personal_access_tokens)
+
+- form = local_assigns.fetch(:form)
+
+.form-group
+  %h5= _('Personal access tokens')
+  = form.gitlab_ui_checkbox_component :disable_personal_access_tokens,
+    _('Disable personal access tokens')

@@ -1,0 +1,39 @@
+---
+hostname: gdk.test
+sshd:
+  additional_config: 'AcceptEnv GIT_PROTOCOL'
+webpack:
+  enabled: false
+  live_reload: false
+  sourcemaps: false
+  incremental: false
+  static: true
+vite:
+  enabled: false
+  hot_module_reloading: false
+gdk:
+  ask_to_restart_after_update: false
+  auto_reconfigure: false
+  overwrite_changes: true
+  quiet: false
+gitlab:
+  cache_classes: true
+  lefthook_enabled: false
+  rails:
+    bootsnap: false
+    hostname: gdk.test
+    application_settings_cache_seconds: 0
+    puma:
+      threads_max: 6
+gitlab_k8s_agent:
+  enabled: false
+gitlab_pages:
+  enabled: false
+prometheus:
+  enabled: false
+tracer:
+  jaeger:
+    enabled: false
+# https://gitlab.com/gitlab-org/gitlab/-/issues/471172
+gitlab_http_router:
+  enabled: true

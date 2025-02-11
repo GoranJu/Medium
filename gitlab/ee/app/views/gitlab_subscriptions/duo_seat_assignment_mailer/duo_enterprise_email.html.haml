@@ -1,0 +1,91 @@
+- demo_link = 'https://gitlab.navattic.com/duo-enterprise?utm_medium=email&utm_source=iterable&utm_campaign=eg_global_lfc_nurture_aisdlc_en_duoenterpriseseatallocation&utm_content=onboarding_email_x'
+- click_through_demo_link = link_to('', demo_link, target: '_blank', rel: 'noopener noreferrer')
+:css
+  a {color: #A989F5 }
+  table { border-collapse: collapse !important; }
+%table{ border: "0", cellpadding: "0", cellspacing: "0", role: "presentation", width: "100%" }
+  %tr
+    %td{ align: "center", style: "padding: 0px;" }
+      %table{ border: "0", cellpadding: "0", cellspacing: "0", role: "presentation", style: "background-color: #171321", width: "600" }
+        %tr
+          %td{ style: "padding: 0px;" }
+            %table{ border: "0", cellpadding: "0", cellspacing: "0", role: "presentation", width: "100%" }
+              %tr
+                %td{ align: "left", style: "padding: 20px;" }
+                  %a{ href: "https://about.gitlab.com/", target: "_blank", rel: "noopener noreferrer nofollow" }
+                    %img{ alt: "go to demo", src: image_url('mailers/duo/duo_white_logo.png'), width: "150" }
+
+              %tr
+                %td{ style: "max-width: 600px; width: 100%; text-align: left; height: 62px; padding: 0 20px; min-height: 40px; font-family: 'Source Sans Pro', helvetica, arial, sans-serif;", valign: "middle", width: "100%" }
+                  %h1{ style: "padding-bottom: 13px; color: #ffffff; margin: 0;" }
+                    = s_('DuoEnterprise|You have been assigned a GitLab Duo Enterprise seat')
+
+              %tr
+                %td{ align: "left", style: "padding: 0 20px;" }
+                  %a.logo{ href: demo_link }
+                    %img{ alt: "sign in", src: image_url('mailers/duo/root_cause_analysis_preview'), width: "540" }
+
+              %tr
+                %td{ style: "padding: 20px 50px 20px 30px; font-family: 'Source Sans Pro', helvetica, arial, sans-serif; color: #ffffff; line-height: 20px;" }
+                  %p
+                    = safe_format(s_('DuoEnterprise|You now have access to %{link_start}GitLab Duo Enterprise%{link_end}, the only AI solution that supports developers at every stage of the software development lifecycle.'), tag_pair(click_through_demo_link, :link_start, :link_end))
+                  %p
+                    - help_link = link_to('', help_page_url('editor_extensions/_index.md'), target: '_blank', rel: 'noopener noreferrer')
+                    = safe_format(s_('DuoEnterprise|To get started using GitLab Duo Enterprise features, %{link_start}set up your IDE for success.%{link_end}.'), tag_pair(help_link, :link_start, :link_end))
+
+              %tr
+                %td{ align: "left", style: "padding: 10px 40px 30px 40px; font-family: 'Source Sans Pro', helvetica, arial, sans-serif; color: #ffffff;" }
+                  %a{ href: help_page_url('user/gitlab_duo/setup.md'), style: "font-weight: bold; font-family: 'Source Sans Pro', helvetica, arial, sans-serif; color: #ffffff; text-decoration: none; border-radius: 3px;  border-top: 10px solid #7759c2; border-bottom: 10px solid #7759c2; border-right: 25px solid #7759c2; border-left: 25px solid #7759c2; background-color: #7759c2; display: inline-block;", target: "_blank", rel: "noopener noreferrer nofollow" }
+                    = _('Get started')
+                  %p{ style: "padding-left: 10px; font-size: 12px;" }
+                    = safe_format(s_('DuoEnterprise|Need help enabling features? Check to make sure an administrator has %{link_start}configured GitLab Duo on your instance%{link_end}.'), tag_pair(click_through_demo_link, :link_start, :link_end))
+
+              %tr
+                %td{ style: "text-align: left; height: 56px; padding: 0 40px; min-height: 40px; font-family: 'Source Sans Pro', helvetica, arial, sans-serif;", valign: "middle", width: "100%" }
+                  %h3{ style: "font-size: 26px; line-height: 30px; color: #ffffff; font-weight: 600;" }
+                    = s_('DuoEnterprise|Get started with these Duo Enterprise features:')
+
+              %tr
+                %td{ style: "font-family: 'Source Sans Pro', helvetica, arial, sans-serif; " }
+                  %table{ role: "presentation", style: "color: #ffffff; width: 540px" }
+                    %tr
+                      %td{ style: "vertical-align: top; padding: 0px 15px 20px 40px" }
+                        %a{ href: help_page_url('user/gitlab_duo_chat/examples.md', anchor: 'troubleshoot-failed-cicd-jobs-with-root-cause-analysis') }
+                          %img{ alt: "AI-assisted Root Cause Analysis", src: image_url('mailers/duo/code_suggestions_feature_icon'), width: "60" }
+                      %td{ align: "left", style: "vertical-align: middle" }
+                        %h3{ style: "line-height: 20px; margin: 0;" }
+                          %a{ href: help_page_url('user/gitlab_duo_chat/examples.md', anchor: 'troubleshoot-failed-cicd-jobs-with-root-cause-analysis') }
+                            = s_('DuoEnterprise|AI-assisted root cause analysis')
+                        %p{ style: "margin: 13px 0px" }
+                          = s_('DuoEnterprise|Quickly resolve CI/CD pipeline issues so developers can focus on critical tasks')
+                    %tr
+                      %td{ style: "vertical-align: top; padding: 20px 15px 0px 40px" }
+                        %a{ href: help_page_url('user/application_security/vulnerabilities/_index.md', anchor: 'vulnerability-resolution') }
+                          %img{ alt: "AI-powered Vulnerability Remediation", src: image_url('mailers/duo/vulnerability_ai_icon'), width: "60" }
+                      %td{ align: "left", style: "vertical-align: middle; padding: 20px 15px 0px 0px" }
+                        %h3{ style: "line-height: 20px; margin: 0;" }
+                          %a{ href: help_page_url('user/application_security/vulnerabilities/_index.md', anchor: 'vulnerability-resolution') }
+                            = s_('DuoEnterprise|AI-powered vulnerability remediation')
+                        %p{ style: "margin: 13px 0px" }
+                          = s_('DuoEnterprise|Understand and remediate vulnerabilities more efficiently to mitigate security risks')
+                    %tr
+                      %td{ style: "vertical-align: top; padding: 20px 15px 20px 40px" }
+                        %a{ href: help_page_url('user/project/merge_requests/duo_in_merge_requests.md') }
+                          %img{ alt: "Collaboration and Summarization Tools", src: image_url('mailers/duo/duo_book_epic_icon'), width: "60" }
+                      %td{ align: "left", style: "vertical-align: middle; padding: 20px 15px 20px 0px" }
+                        %h3{ style: "line-height: 20px; margin: 0;" }
+                          %a{ href: help_page_url('user/project/merge_requests/duo_in_merge_requests.md') }
+                            = s_('DuoEnterprise|Collaboration and summarization tools')
+                        %p{ style: "margin: 13px 0px" }
+                          = s_('DuoEnterprise|Easily get up to speed on issue discussions with concise overviews of proposed code changes')
+
+              %tr
+                %td{ align: "left", style: "padding: 10px 40px 30px 40px; font-family: 'Source Sans Pro', helvetica, arial, sans-serif;" }
+                  %a{ href: demo_link, style: "font-weight: bold; font-family: 'Source Sans Pro', helvetica, arial, sans-serif; color: #ffffff; text-decoration: none; border-radius: 3px;  border-top: 10px solid #7759c2; border-bottom: 10px solid #7759c2; border-right: 25px solid #7759c2; border-left: 25px solid #7759c2; background-color: #7759c2; display: inline-block;", target: "_blank", rel: "noopener noreferrer nofollow" }
+                    = _('Learn more')
+
+              %tr
+                %td{ align: "center", style: "color: #ffffff; padding-top: 20px; font-family: 'Source Sans Pro', helvetica, arial, sans-serif;" }
+                  %img{ alt: "GitLab", src: image_url('mailers/gitlab_logo.png'), width: "36" }
+                  %p{ style: "font-size: 13px; padding: 20px" }
+                    = notification_reason_text(show_manage_notifications_link: true, show_help_link: true, unsubscribe_url: @unsubscribe_url, format: :html)

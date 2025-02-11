@@ -1,0 +1,9 @@
+---
+name: enforce_pipl_compliance
+feature_issue_url: https://gitlab.com/gitlab-org/gitlab/-/issues/455709
+introduced_by_url: https://gitlab.com/gitlab-org/gitlab/-/merge_requests/163311
+rollout_issue_url: https://gitlab.com/gitlab-org/gitlab/-/issues/479953
+milestone: '17.7'
+group: group::authentication
+type: wip
+default_enabled: false

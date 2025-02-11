@@ -1,0 +1,9 @@
+---
+name: separate_group_scim_table
+feature_issue_url: https://gitlab.com/gitlab-org/gitlab/-/issues/495503
+introduced_by_url: https://gitlab.com/gitlab-org/gitlab/-/merge_requests/170565
+rollout_issue_url: https://gitlab.com/gitlab-org/gitlab/-/issues/501038
+milestone: '17.8'
+group: group::authentication
+type: gitlab_com_derisk
+default_enabled: false

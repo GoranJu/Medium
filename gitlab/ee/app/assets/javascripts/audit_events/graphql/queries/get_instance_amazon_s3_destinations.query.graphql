@@ -1,0 +1,11 @@
+query listInstanceAmazonS3Configuration {
+  auditEventsInstanceAmazonS3Configurations {
+    nodes {
+      id
+      name
+      accessKeyXid
+      awsRegion
+      bucketName
+    }
+  }
+}

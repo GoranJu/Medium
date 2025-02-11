@@ -1,0 +1,30 @@
+#import "~/analytics/shared/graphql/dora_metric_item.fragment.graphql"
+
+query doraMetricsByProjectQuery(
+  $fullPath: ID!
+  $startDate: Date!
+  $endDate: Date!
+  $interval: DoraMetricBucketingInterval!
+  $after: String
+) {
+  group(fullPath: $fullPath) {
+    id
+    projects(after: $after) {
+      pageInfo {
+        endCursor
+        hasNextPage
+      }
+      nodes {
+        id
+        name
+        avatarUrl
+        webUrl
+        dora {
+          metrics(startDate: $startDate, endDate: $endDate, interval: $interval) {
+            ...DoraMetricItem
+          }
+        }
+      }
+    }
+  }
+}

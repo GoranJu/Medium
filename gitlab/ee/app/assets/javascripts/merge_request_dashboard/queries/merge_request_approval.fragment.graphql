@@ -1,0 +1,10 @@
+fragment MergeRequestApprovalFragment on MergeRequest {
+  approved
+  approvalsRequired
+  approvalsLeft
+  approvedBy {
+    nodes {
+      id
+    }
+  }
+}

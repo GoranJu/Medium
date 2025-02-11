@@ -1,0 +1,9 @@
+---
+name: pipeline_execution_policy_analyze_configs
+feature_issue_url: https://gitlab.com/gitlab-org/gitlab/-/issues/498624
+introduced_by_url: https://gitlab.com/gitlab-org/gitlab/-/merge_requests/178186
+rollout_issue_url: https://gitlab.com/gitlab-org/gitlab/-/issues/513513
+milestone: '17.9'
+group: group::security policies
+type: gitlab_com_derisk
+default_enabled: false

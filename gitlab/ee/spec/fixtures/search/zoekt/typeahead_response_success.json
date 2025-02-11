@@ -1,0 +1,280 @@
+{
+  "Result": {
+    "ContentBytesLoaded": 26858,
+    "IndexBytesLoaded": 119,
+    "Crashes": 0,
+    "Duration": 68041,
+    "FileCount": 1,
+    "ShardFilesConsidered": 0,
+    "FilesConsidered": 4,
+    "FilesLoaded": 4,
+    "FilesSkipped": 0,
+    "ShardsScanned": 1,
+    "ShardsSkipped": 0,
+    "ShardsSkippedFilter": 0,
+    "MatchCount": 12,
+    "NgramMatches": 20,
+    "NgramLookups": 48,
+    "Wait": 2041,
+    "MatchTreeConstruction": 19292,
+    "MatchTreeSearch": 21667,
+    "RegexpsConsidered": 0,
+    "FlushReason": 0,
+    "Files": [
+      {
+        "Score": 513.2857142857143,
+        "Debug": "",
+        "FileName": "test/typeahead/highlight_spec.js",
+        "Repository": "8",
+        "Branches": [
+          "HEAD"
+        ],
+        "LineMatches": [
+          {
+            "Line": "ICAgIGV4cGVjdCh0ZXN0Tm9kZS5pbm5lckhUTUwpLnRvRXF1YWwoYWZ0ZXIpOw==",
+            "LineStart": 268,
+            "LineEnd": 314,
+            "LineNumber": 8,
+            "Before": "ICAgIGhpZ2hsaWdodCh7IG5vZGU6IHRlc3ROb2RlLCBwYXR0ZXJuOiAnYmNkJywgdGFnTmFtZTogJ3NwYW4nIH0pOw==",
+            "After": "ICB9KTs=",
+            "FileName": false,
+            "Score": 501,
+            "DebugScore": "",
+            "LineFragments": [
+              {
+                "LineOffset": 20,
+                "Offset": 288,
+                "MatchLength": 5,
+                "SymbolInfo": null
+              }
+            ]
+          },
+          {
+            "Line": "ICAgIGV4cGVjdCh0ZXN0Tm9kZS5pbm5lckhUTUwpLnRvRXF1YWwoYWZ0ZXIpOw==",
+            "LineStart": 582,
+            "LineEnd": 628,
+            "LineNumber": 17,
+            "Before": "ICAgIGhpZ2hsaWdodCh7IG5vZGU6IHRlc3ROb2RlLCBwYXR0ZXJuOiAnYmNkJywgY2xhc3NOYW1lOiAnb25lIHR3bycgfSk7",
+            "After": "ICB9KTs=",
+            "FileName": false,
+            "Score": 500.9166666666667,
+            "DebugScore": "",
+            "LineFragments": [
+              {
+                "LineOffset": 20,
+                "Offset": 602,
+                "MatchLength": 5,
+                "SymbolInfo": null
+              }
+            ]
+          },
+          {
+            "Line": "ICAgIGV4cGVjdCh0ZXN0Tm9kZS5pbm5lckhUTUwpLnRvRXF1YWwoYWZ0ZXIpOw==",
+            "LineStart": 857,
+            "LineEnd": 903,
+            "LineNumber": 26,
+            "Before": "ICAgIGhpZ2hsaWdodCh7IG5vZGU6IHRlc3ROb2RlLCBwYXR0ZXJuOiAnYmNkJyB9KTs=",
+            "After": "ICB9KTs=",
+            "FileName": false,
+            "Score": 500.8333333333333,
+            "DebugScore": "",
+            "LineFragments": [
+              {
+                "LineOffset": 20,
+                "Offset": 877,
+                "MatchLength": 5,
+                "SymbolInfo": null
+              }
+            ]
+          },
+          {
+            "Line": "ICAgIGV4cGVjdCh0ZXN0Tm9kZS5pbm5lckhUTUwpLnRvRXF1YWwoYWZ0ZXIpOw==",
+            "LineStart": 1130,
+            "LineEnd": 1176,
+            "LineNumber": 35,
+            "Before": "ICAgIGhpZ2hsaWdodCh7IG5vZGU6IHRlc3ROb2RlLCBwYXR0ZXJuOiAnYmNkJywgY2FzZVNlbnNpdGl2ZTogdHJ1ZSB9KTs=",
+            "After": "ICB9KTs=",
+            "FileName": false,
+            "Score": 500.75,
+            "DebugScore": "",
+            "LineFragments": [
+              {
+                "LineOffset": 20,
+                "Offset": 1150,
+                "MatchLength": 5,
+                "SymbolInfo": null
+              }
+            ]
+          },
+          {
+            "Line": "ICAgIGV4cGVjdCh0ZXN0Tm9kZS5pbm5lckhUTUwpLnRvRXF1YWwoYWZ0ZXIpOw==",
+            "LineStart": 1437,
+            "LineEnd": 1483,
+            "LineNumber": 44,
+            "Before": "ICAgIGhpZ2hsaWdodCh7IG5vZGU6IHRlc3ROb2RlLCBwYXR0ZXJuOiAnb25lJywgd29yZHNPbmx5OiB0cnVlIH0pOw==",
+            "After": "ICB9KTs=",
+            "FileName": false,
+            "Score": 500.6666666666667,
+            "DebugScore": "",
+            "LineFragments": [
+              {
+                "LineOffset": 20,
+                "Offset": 1457,
+                "MatchLength": 5,
+                "SymbolInfo": null
+              }
+            ]
+          },
+          {
+            "Line": "ICAgIGV4cGVjdCh0ZXN0Tm9kZS5pbm5lckhUTUwpLnRvRXF1YWwoYWZ0ZXIpOw==",
+            "LineStart": 1763,
+            "LineEnd": 1809,
+            "LineNumber": 53,
+            "Before": "ICAgIGhpZ2hsaWdodCh7IG5vZGU6IHRlc3ROb2RlLCBwYXR0ZXJuOiBbJ3RvbmUnLCAncGhvbmUnXSB9KTs=",
+            "After": "ICB9KTs=",
+            "FileName": false,
+            "Score": 500.5833333333333,
+            "DebugScore": "",
+            "LineFragments": [
+              {
+                "LineOffset": 20,
+                "Offset": 1783,
+                "MatchLength": 5,
+                "SymbolInfo": null
+              }
+            ]
+          },
+          {
+            "Line": "ICAgIGV4cGVjdCh0ZXN0Tm9kZS5pbm5lckhUTUwpLnRvRXF1YWwoYWZ0ZXIpOw==",
+            "LineStart": 2075,
+            "LineEnd": 2121,
+            "LineNumber": 62,
+            "Before": "ICAgIGhpZ2hsaWdodCh7IG5vZGU6IHRlc3ROb2RlLCBwYXR0ZXJuOiBbJyouJywgJz8nXSB9KTs=",
+            "After": "ICB9KTs=",
+            "FileName": false,
+            "Score": 500.5,
+            "DebugScore": "",
+            "LineFragments": [
+              {
+                "LineOffset": 20,
+                "Offset": 2095,
+                "MatchLength": 5,
+                "SymbolInfo": null
+              }
+            ]
+          },
+          {
+            "Line": "ICAgIGV4cGVjdCh0ZXN0Tm9kZS5pbm5lckhUTUwpLnRvRXF1YWwoYWZ0ZXIpOw==",
+            "LineStart": 2643,
+            "LineEnd": 2689,
+            "LineNumber": 81,
+            "Before": "ICAgIGhpZ2hsaWdodCh7IG5vZGU6IHRlc3ROb2RlLCBwYXR0ZXJuOiAnYWJjJyB9KTs=",
+            "After": "ICB9KTs=",
+            "FileName": false,
+            "Score": 500.4166666666667,
+            "DebugScore": "",
+            "LineFragments": [
+              {
+                "LineOffset": 20,
+                "Offset": 2663,
+                "MatchLength": 5,
+                "SymbolInfo": null
+              }
+            ]
+          },
+          {
+            "Line": "ICAgIGV4cGVjdCh0ZXN0Tm9kZS5pbm5lckhUTUwpLnRvRXF1YWwoYWZ0ZXIpOw==",
+            "LineStart": 2958,
+            "LineEnd": 3004,
+            "LineNumber": 90,
+            "Before": "ICAgIGhpZ2hsaWdodCh7IG5vZGU6IHRlc3ROb2RlLCBwYXR0ZXJuOiBbJ3NwYW4nLCAnY2xhc3MnXSB9KTs=",
+            "After": "ICB9KTs=",
+            "FileName": false,
+            "Score": 500.3333333333333,
+            "DebugScore": "",
+            "LineFragments": [
+              {
+                "LineOffset": 20,
+                "Offset": 2978,
+                "MatchLength": 5,
+                "SymbolInfo": null
+              }
+            ]
+          },
+          {
+            "Line": "ICAgIGV4cGVjdCh0ZXN0Tm9kZS5pbm5lckhUTUwpLnRvRXF1YWwoYWZ0ZXIpOw==",
+            "LineStart": 3229,
+            "LineEnd": 3275,
+            "LineNumber": 99,
+            "Before": "ICAgIGhpZ2hsaWdodCh7IG5vZGU6IHRlc3ROb2RlLCBwYXR0ZXJuOiAnYWJjJyB9KTs=",
+            "After": "ICB9KTs=",
+            "FileName": false,
+            "Score": 500.25,
+            "DebugScore": "",
+            "LineFragments": [
+              {
+                "LineOffset": 20,
+                "Offset": 3249,
+                "MatchLength": 5,
+                "SymbolInfo": null
+              }
+            ]
+          },
+          {
+            "Line": "ICAgIGV4cGVjdCh0ZXN0Tm9kZS5pbm5lckhUTUwpLnRvRXF1YWwoYWZ0ZXIpOw==",
+            "LineStart": 3491,
+            "LineEnd": 3537,
+            "LineNumber": 108,
+            "Before": "ICAgIGhpZ2hsaWdodCh7IG5vZGU6IHRlc3ROb2RlLCBwYXR0ZXJuOiAnYWJjJyB9KTs=",
+            "After": "ICB9KTs=",
+            "FileName": false,
+            "Score": 500.1666666666667,
+            "DebugScore": "",
+            "LineFragments": [
+              {
+                "LineOffset": 20,
+                "Offset": 3511,
+                "MatchLength": 5,
+                "SymbolInfo": null
+              }
+            ]
+          },
+          {
+            "Line": "ICAgIG5vZGUuaW5uZXJIVE1MID0gY29udGVudDs=",
+            "LineStart": 3627,
+            "LineEnd": 3656,
+            "LineNumber": 113,
+            "Before": "ICAgIHZhciBub2RlID0gZG9jdW1lbnQuY3JlYXRlRWxlbWVudCgnZGl2Jyk7",
+            "After": "",
+            "FileName": false,
+            "Score": 500.0833333333333,
+            "DebugScore": "",
+            "LineFragments": [
+              {
+                "LineOffset": 9,
+                "Offset": 3636,
+                "MatchLength": 5,
+                "SymbolInfo": null
+              }
+            ]
+          }
+        ],
+        "ChunkMatches": null,
+        "RepositoryID": 8,
+        "RepositoryPriority": 0,
+        "Content": null,
+        "Checksum": "eNXW3u8RGWk=",
+        "Language": "JavaScript",
+        "SubRepositoryName": "",
+        "SubRepositoryPath": "",
+        "Version": "588440f66559714280628a4f9799f0c4eb880a4a"
+      }
+    ],
+    "RepoURLs": {
+      "8": ""
+    },
+    "LineFragments": {
+      "8": ""
+    }
+  }
+}

@@ -1,0 +1,8 @@
+mutation createClusterAgentMapping(
+  $input: NamespaceCreateRemoteDevelopmentClusterAgentMappingInput!
+) {
+  namespaceCreateRemoteDevelopmentClusterAgentMapping(input: $input) {
+    errors
+    clientMutationId
+  }
+}

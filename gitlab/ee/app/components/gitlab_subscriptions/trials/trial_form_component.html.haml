@@ -1,0 +1,25 @@
+- page_title s_('Trial|Start your free Ultimate and GitLab Duo Enterprise trial')
+
+- content_for :page_specific_javascripts do
+  = render 'layouts/google_tag_manager_head'
+  = render 'layouts/one_trust'
+= render 'layouts/google_tag_manager_body'
+
+.gl-flex.gl-flex-col.md:gl-flex-row.gl-items-center.gl-justify-center
+  .sm:gl-m-8.gl-max-w-80
+    %h2.gl-pb-5.gl-my-0
+      = title_text
+
+    %p.gl-text-gray-700.gl-text-lg
+      = trial_selection_intro_text
+
+    = before_form_content
+
+    = form_tag submit_path, method: :post, class: 'js-saas-trial-group', data: { testid: 'trial-form' } do
+      .js-namespace-selector{ data: trial_namespace_selector_data }
+      = render Pajamas::ButtonComponent.new(type: :submit, variant: :confirm,
+        button_options: {data: { testid: 'start-your-free-trial-button' }}) do
+        = _('Activate my trial')
+
+  .gl-w-48.gl-m-7
+    = image_tag 'illustrations/saas-trial-illustration.svg', alt: 'Trial illustration', class: 'gl-hidden md:gl-inline'

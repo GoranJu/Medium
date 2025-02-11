@@ -1,0 +1,63 @@
+# frozen_string_literal: true
+
+module Features
+  module HandRaiseLeadHelpers
+    def fill_in_and_submit_hand_raise_lead(user, namespace, glm_content: nil, product_interaction: 'Hand Raise PQL')
+      form_data = {
+        first_name: user.first_name,
+        last_name: user.last_name,
+        phone_number: '+1 23 456-78-90',
+        company_size: '1 - 99',
+        company_name: user.organization,
+        country: { id: 'US', name: 'United States of America' },
+        state: { id: 'CA', name: 'California' }
+      }
+
+      hand_raise_lead_params = {
+        "first_name" => form_data[:first_name],
+        "last_name" => form_data[:last_name],
+        "company_name" => form_data[:company_name],
+        "company_size" => form_data[:company_size].delete(' '),
+        "phone_number" => form_data[:phone_number],
+        "country" => form_data.dig(:country, :id),
+        "state" => form_data.dig(:state, :id),
+        "namespace_id" => namespace.id,
+        "comment" => '',
+        "glm_content" => glm_content,
+        "product_interaction" => product_interaction,
+        "work_email" => user.email,
+        "uid" => user.id,
+        "setup_for_company" => user.setup_for_company,
+        "provider" => "gitlab",
+        "existing_plan" => namespace.actual_plan.name,
+        "glm_source" => 'gitlab.com'
+      }
+
+      lead_params = ActionController::Parameters.new(hand_raise_lead_params).permit!
+
+      expect_next_instance_of(GitlabSubscriptions::CreateHandRaiseLeadService) do |service|
+        expect(service).to receive(:execute).with(lead_params).and_return(ServiceResponse.success)
+      end
+
+      fill_hand_raise_lead_form_and_submit(form_data)
+    end
+
+    def fill_hand_raise_lead_form_and_submit(form_data)
+      within_testid('hand-raise-lead-modal') do
+        aggregate_failures do
+          expect(page).to have_content('Contact our Sales team')
+          expect(page).to have_field('First name', with: form_data[:first_name])
+          expect(page).to have_field('Last name', with: form_data[:last_name])
+          expect(page).to have_field('Company name', with: form_data[:company_name])
+        end
+
+        select form_data[:company_size], from: 'company-size'
+        fill_in 'phone-number', with: form_data[:phone_number]
+        select form_data.dig(:country, :name), from: 'country'
+        select form_data.dig(:state, :name), from: 'state'
+
+        click_button 'Submit information'
+      end
+    end
+  end
+end

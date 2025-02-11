@@ -1,0 +1,16 @@
+-# EE:Self Managed
+- gitlab_duo_text = _('GitLab Duo')
+- page_title gitlab_duo_text
+- breadcrumb_title gitlab_duo_text
+
+- if ::Ai::AmazonQ.feature_available? && !::Ai::AmazonQ.connected?
+  = render Pajamas::BannerComponent.new(close_options: { class: '!gl-hidden'},
+    svg_path: 'illustrations/tanuki-ai-sm.svg',
+    button_text: s_('AmazonQ|Get started'),
+    button_link: admin_ai_amazon_q_settings_path) do |c|
+    - c.with_title do
+      = s_('AmazonQ|Configure GitLab Duo with Amazon Q (Beta)')
+    %p
+      = s_('AmazonQ|Use Amazon Q to automate workflows, create a merge request from an issue, upgrade Java, and improve your code with AI-powered reviews.')
+
+#js-gitlab-duo-admin-page{ data: admin_duo_home_app_data }

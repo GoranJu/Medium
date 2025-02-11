@@ -1,0 +1,8 @@
+- return if ::Gitlab::Saas.enabled?
+- return unless License.feature_available?(:service_accounts)
+- form = local_assigns.fetch(:form)
+
+.form-group
+  = form.label :service_access_tokens_expiration_enforced, _('Service account token expiration'), class: 'label-bold'
+  - pat_expiry_rules_link = link_to('', help_page_path('user/profile/personal_access_tokens.md', anchor: 'access-token-expiration', target: '_blank', rel: 'noopener noreferrer'))
+  = form.gitlab_ui_checkbox_component :service_access_tokens_expiration_enforced, _('Require expiration date'), help_text: safe_format(s_('Changes will not affect existing token expiration dates. %{link_start}How will this affect expiration dates?%{link_end}'), tag_pair(pat_expiry_rules_link, :link_start, :link_end))

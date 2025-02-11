@@ -1,0 +1,9 @@
+---
+name: plan_limits_repository_size
+feature_issue_url: https://gitlab.com/groups/gitlab-org/-/epics/14212
+introduced_by_url: https://gitlab.com/gitlab-org/gitlab/-/merge_requests/172240
+rollout_issue_url: https://gitlab.com/gitlab-org/gitlab/-/issues/502239
+milestone: '17.6'
+group: group::utilization
+type: wip
+default_enabled: false

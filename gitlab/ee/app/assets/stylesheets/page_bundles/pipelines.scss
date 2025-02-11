@@ -1,0 +1,22 @@
+@import '../../../../../app/assets/stylesheets/page_bundles/pipelines';
+
+.linked-pipeline-mini-list {
+  .linked-pipeline-mini-item {
+    &:active,
+    &:focus,
+    &:focus:active {
+      background-color: transparent;
+      @apply gl-focus;
+    }
+
+    &:first-of-type:last-of-type {
+      margin-right: 0;
+    }
+  }
+
+  .linked-pipelines-counter {
+    &:hover {
+      background: $gray-100;
+    }
+  }
+}

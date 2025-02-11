@@ -1,0 +1,22 @@
+---
+table_name: incident_management_oncall_shifts
+classes:
+- IncidentManagement::OncallShift
+feature_categories:
+- incident_management
+- on_call_schedule_management
+description: Tracks past and present on-call shifts
+introduced_by_url: https://gitlab.com/gitlab-org/gitlab/-/merge_requests/49423
+milestone: '13.8'
+gitlab_schema: gitlab_main_cell
+desired_sharding_key:
+  project_id:
+    references: projects
+    backfill_via:
+      parent:
+        foreign_key: rotation_id
+        table: incident_management_oncall_rotations
+        sharding_key: project_id
+        belongs_to: rotation
+    awaiting_backfill_on_parent: true
+table_size: small

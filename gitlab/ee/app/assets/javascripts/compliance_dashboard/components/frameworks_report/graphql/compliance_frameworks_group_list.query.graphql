@@ -1,0 +1,40 @@
+#import "./fragments/compliance_frameworks_connection_details.fragment.graphql"
+
+query complianceFrameworksGroupList(
+  $fullPath: ID!
+  $search: String
+  $before: String
+  $after: String
+  $first: Int
+  $last: Int
+  $projectLimit: Int = 10
+) {
+  namespace: group(fullPath: $fullPath) {
+    id
+    name
+    complianceFrameworks(
+      search: $search
+      before: $before
+      after: $after
+      first: $first
+      last: $last
+    ) {
+      ...ComplianceFrameworkConnectionDetails
+      nodes {
+        id
+        projects(first: $projectLimit) {
+          count
+          nodes {
+            id
+            name
+            webUrl
+            fullPath
+          }
+          pageInfo {
+            hasNextPage
+          }
+        }
+      }
+    }
+  }
+}

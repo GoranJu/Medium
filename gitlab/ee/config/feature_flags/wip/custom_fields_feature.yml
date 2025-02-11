@@ -1,0 +1,9 @@
+---
+name: custom_fields_feature
+feature_issue_url: https://gitlab.com/groups/gitlab-org/-/epics/14904
+introduced_by_url: https://gitlab.com/gitlab-org/gitlab/-/merge_requests/167874
+rollout_issue_url: https://gitlab.com/gitlab-org/gitlab/-/issues/498414
+milestone: '17.5'
+group: group::project management
+type: wip
+default_enabled: false

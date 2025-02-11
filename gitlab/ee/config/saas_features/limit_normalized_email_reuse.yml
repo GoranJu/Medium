@@ -1,0 +1,5 @@
+---
+name: limit_normalized_email_reuse
+introduced_by_url: https://gitlab.com/gitlab-org/gitlab/-/merge_requests/167357
+milestone: '17.6'
+group: group::anti-abuse

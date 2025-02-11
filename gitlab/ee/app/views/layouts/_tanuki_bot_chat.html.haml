@@ -1,0 +1,5 @@
+- return unless ::Gitlab::Llm::TanukiBot.enabled_for?(user: current_user, container: nil)
+- resource_id = Gitlab::Llm::TanukiBot.resource_id
+- project_id = Gitlab::Llm::TanukiBot.project_id
+
+#js-tanuki-bot-chat-app{ data: { user_id: current_user.to_global_id, resource_id: resource_id, project_id: project_id } }

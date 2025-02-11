@@ -1,0 +1,9 @@
+---
+name: codeowners_file_exclusions
+feature_issue_url: https://gitlab.com/gitlab-org/gitlab/-/issues/41914
+introduced_by_url: https://gitlab.com/gitlab-org/gitlab/-/merge_requests/180162
+rollout_issue_url: https://gitlab.com/gitlab-org/gitlab/-/issues/517075
+milestone: '17.9'
+group: group::source code
+type: gitlab_com_derisk
+default_enabled: false

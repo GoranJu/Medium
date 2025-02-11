@@ -1,0 +1,9 @@
+---
+name: static_licenses
+feature_issue_url: https://gitlab.com/gitlab-org/gitlab/-/issues/497969
+introduced_by_url: https://gitlab.com/gitlab-org/gitlab/-/merge_requests/169367
+rollout_issue_url: https://gitlab.com/gitlab-org/gitlab/-/issues/499430
+milestone: '17.6'
+group: group::security policies
+type: beta
+default_enabled: false

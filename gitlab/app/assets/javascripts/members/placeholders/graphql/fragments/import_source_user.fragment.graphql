@@ -1,0 +1,17 @@
+#import "~/graphql_shared/fragments/user.fragment.graphql"
+
+fragment ImportSourceUser on ImportSourceUser {
+  id
+  sourceUsername
+  sourceName
+  sourceHostname
+  sourceUserIdentifier
+  status
+  reassignmentError
+  placeholderUser {
+    ...User
+  }
+  reassignToUser {
+    ...User
+  }
+}

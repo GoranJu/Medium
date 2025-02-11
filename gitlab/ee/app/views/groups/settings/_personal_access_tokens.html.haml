@@ -1,0 +1,10 @@
+- return unless group.root? && group.licensed_feature_available?(:disable_personal_access_tokens)
+
+%h5= _('Personal access tokens')
+
+.form-group.gl-mb-3
+  = f.gitlab_ui_checkbox_component :disable_personal_access_tokens, checkbox_options: { checked: group.disable_personal_access_tokens? } do |c|
+    - c.with_label do
+      = s_('GroupSettings|Disable personal access tokens')
+    - c.with_help_text do
+      = s_("GroupSettings|If enabled, enterprise user accounts will not be able to use personal access tokens.")

@@ -1,0 +1,21 @@
+#import "./fragments/role.fragment.graphql"
+
+query getInstanceRoles {
+  # Filter out the Minimal Access role (business requirement).
+  standardRoles(accessLevel: [GUEST, REPORTER, PLANNER, DEVELOPER, MAINTAINER, OWNER]) {
+    nodes {
+      ...Role
+      detailsPath
+    }
+  }
+  memberRoles {
+    nodes {
+      ...Role
+      detailsPath
+      dependentSecurityPolicies {
+        name
+        editPath
+      }
+    }
+  }
+}

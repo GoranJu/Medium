@@ -1,0 +1,9 @@
+---
+name: ensure_pipeline_policy_pre_stage_complete_group
+feature_issue_url: https://gitlab.com/gitlab-org/gitlab/-/issues/469256
+introduced_by_url: https://gitlab.com/gitlab-org/gitlab/-/merge_requests/176192
+rollout_issue_url: https://gitlab.com/gitlab-org/gitlab/-/issues/500652
+milestone: '17.8'
+group: group::security policies
+type: beta
+default_enabled: false

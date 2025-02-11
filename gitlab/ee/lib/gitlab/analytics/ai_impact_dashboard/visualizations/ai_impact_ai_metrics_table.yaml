@@ -1,0 +1,14 @@
+---
+version: 1
+type: AiImpactTable
+data:
+  type: value_stream
+  query:
+    filters:
+      excludeMetrics:
+        - cycle_time
+        - lead_time
+        - deployment_frequency
+        - change_failure_rate
+        - vulnerability_critical
+options: {}

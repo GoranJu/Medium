@@ -1,0 +1,9 @@
+---
+name: remove_cross_join_from_vulnerabilities_projects_grade
+feature_issue_url: https://gitlab.com/gitlab-org/gitlab/-/issues/503387
+introduced_by_url: https://gitlab.com/gitlab-org/gitlab/-/merge_requests/172720
+rollout_issue_url: https://gitlab.com/gitlab-org/gitlab/-/issues/508631
+milestone: '17.7'
+group: group::security infrastructure
+type: gitlab_com_derisk
+default_enabled: false

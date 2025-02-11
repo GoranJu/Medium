@@ -1,0 +1,16 @@
+- title = s_("WorkItem|Issues settings")
+- breadcrumb_title title
+- page_title title
+
+%h1.gl-heading-1.gl-mb-1.settings-title
+  = _('Issues')
+%p.gl-text-subtle
+  = s_('WorkItem|Configure work items such as epics, issues, and tasks to represent how your team works.')
+
+%h2.gl-heading-3.gl-mb-1.settings-title
+  = s_('WorkItem|Custom fields')
+%p.gl-text-subtle.gl-mb-3
+  = s_('WorkItem|Custom fields extend work items to track additional data. Fields will appear in alphanumeric order. All fields apply to all subgroups and projects.')
+  = link_to s_('WorkItem|How do I use custom fields?')
+
+#js-work-items-settings-form{ data: { full_path: @group.full_path } }

@@ -1,0 +1,14 @@
+#import "~/clusters_list/graphql/fragments/cluster_agent.fragment.graphql"
+
+query getAgentsEE($projectPath: ID!) {
+  project(fullPath: $projectPath) {
+    id
+    clusterAgents {
+      nodes {
+        ...ClusterAgentFragment
+        isReceptive
+      }
+      count
+    }
+  }
+}

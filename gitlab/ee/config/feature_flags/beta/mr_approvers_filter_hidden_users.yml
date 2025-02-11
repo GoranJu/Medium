@@ -1,0 +1,9 @@
+---
+name: mr_approvers_filter_hidden_users
+feature_issue_url: https://gitlab.com/gitlab-org/gitlab/-/issues/457490
+introduced_by_url: https://gitlab.com/gitlab-org/gitlab/-/merge_requests/178005
+rollout_issue_url: https://gitlab.com/gitlab-org/gitlab/-/issues/514923
+milestone: '17.9'
+group: group::code review
+type: beta
+default_enabled: false

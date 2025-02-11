@@ -1,0 +1,24 @@
+---
+table_name: requirements_management_test_reports
+classes:
+- RequirementsManagement::TestReport
+feature_categories:
+- requirements_management
+description: Information related to Test Reports, which relate historical test outcomes
+  to Requirements
+introduced_by_url: https://gitlab.com/gitlab-org/gitlab/-/merge_requests/31643
+milestone: '13.0'
+gitlab_schema: gitlab_main_cell
+allow_cross_foreign_keys:
+- gitlab_main_clusterwide
+desired_sharding_key:
+  project_id:
+    references: projects
+    backfill_via:
+      parent:
+        foreign_key: issue_id
+        table: issues
+        sharding_key: project_id
+        belongs_to: requirement_issue
+table_size: small
+desired_sharding_key_migration_job_name: BackfillRequirementsManagementTestReportsProjectId

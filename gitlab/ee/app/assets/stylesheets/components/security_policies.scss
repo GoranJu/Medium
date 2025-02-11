@@ -1,0 +1,81 @@
+.security-policies-alert {
+  top: $calc-application-header-height;
+  z-index: 1;
+}
+
+.security-policies-popover-content-height {
+  height: 12rem;
+}
+
+.security-policies-textarea-min-height {
+  min-height: 200px;
+}
+
+.security-policies-license-modal-min-height {
+  min-height: 700px;
+}
+
+.security-policies-approver-max-width {
+  max-width: 330px;
+}
+
+.security-policies-bg-subtle {
+  @apply gl-bg-subtle;
+}
+
+.security-policies {
+  grid-template-areas: 'content sidebar';
+  grid-template-columns: 1fr $right-sidebar-width;
+  grid-gap: $gl-spacing-scale-5;
+
+  @include media-breakpoint-up(lg) {
+    grid-gap: 0 $gl-spacing-scale-7;
+  }
+}
+
+.security-policies-new-yaml-format {
+  grid-template-areas: 'content sidebar';
+  grid-template-columns: 1fr 350px;
+  grid-gap: $gl-spacing-scale-5;
+
+  @include media-breakpoint-up(lg) {
+    grid-gap: 0 $gl-spacing-scale-7;
+  }
+}
+
+.security-policies-split-view {
+  grid-template-areas: 'content sidebar';
+  grid-template-columns: 1fr 1fr;
+}
+
+.security-policies-content,
+.security-policies-actions {
+  grid-area: content;
+  grid-row: auto;
+}
+
+.security-policies-actions-sidebar {
+  grid-area: sidebar;
+  grid-row: auto;
+}
+
+.security-policies-sidebar {
+  grid-area: sidebar;
+}
+
+.security-policies-drag-handle {
+  width: 16px !important;
+}
+
+.security-policies-drag-handle:hover {
+  background-color: var(--gray-50, #ececef);
+}
+
+.security-policies-drag-handle.is-dragging {
+  background-color: var(--gray-50, #ececef);
+}
+
+.security-policies-drag-thumbnail {
+  height: 40px !important;
+  width: 16px !important;
+}

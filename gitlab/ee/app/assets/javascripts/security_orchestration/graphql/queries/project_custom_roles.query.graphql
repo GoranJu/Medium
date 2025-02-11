@@ -1,0 +1,19 @@
+query projectCustomRoles($fullPath: ID!) {
+  project(fullPath: $fullPath) {
+    id
+    memberRoles {
+      nodes {
+        id
+        name
+        enabledPermissions {
+          edges {
+            node {
+              value
+            }
+          }
+        }
+      }
+    }
+    __typename
+  }
+}

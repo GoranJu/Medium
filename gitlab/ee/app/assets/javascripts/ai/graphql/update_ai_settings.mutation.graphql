@@ -1,0 +1,6 @@
+mutation updateDuoSettings($input: DuoSettingsUpdateInput!) {
+  duoSettingsUpdate(input: $input) {
+    aiGatewayUrl
+    errors
+  }
+}

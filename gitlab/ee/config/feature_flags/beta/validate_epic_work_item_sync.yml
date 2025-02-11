@@ -1,0 +1,9 @@
+---
+name: validate_epic_work_item_sync
+feature_issue_url: https://gitlab.com/gitlab-org/gitlab/-/issues/438548
+introduced_by_url: https://gitlab.com/gitlab-org/gitlab/-/merge_requests/144601
+rollout_issue_url: https://gitlab.com/gitlab-org/gitlab/-/issues/441600
+milestone: '16.10'
+group: group::product planning
+type: beta
+default_enabled: true

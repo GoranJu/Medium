@@ -1,0 +1,9 @@
+---
+name: pass_add_on_name_for_trial_requests
+feature_issue_url: https://gitlab.com/gitlab-org/gitlab/-/issues/497569
+introduced_by_url: https://gitlab.com/gitlab-org/gitlab/-/merge_requests/171282
+rollout_issue_url: https://gitlab.com/gitlab-org/gitlab/-/issues/502589
+milestone: '17.6'
+group: group::acquisition
+type: gitlab_com_derisk
+default_enabled: false

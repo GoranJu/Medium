@@ -1,0 +1,9 @@
+---
+name: zoekt_critical_watermark_stop_indexing
+feature_issue_url: https://gitlab.com/gitlab-org/gitlab/-/issues/504945
+introduced_by_url: https://gitlab.com/gitlab-org/gitlab/-/merge_requests/173167
+rollout_issue_url: https://gitlab.com/gitlab-org/gitlab/-/issues/505334
+milestone: '17.7'
+group: group::global search
+type: ops
+default_enabled: false

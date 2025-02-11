@@ -1,0 +1,9 @@
+---
+name: security_policies_new_yaml_format
+feature_issue_url: https://gitlab.com/gitlab-org/gitlab/-/issues/478628
+introduced_by_url: https://gitlab.com/gitlab-org/gitlab/-/issues/497402
+rollout_issue_url: https://gitlab.com/gitlab-org/gitlab/-/issues/506451
+milestone: '17.6'
+group: group::security policies
+type: development
+default_enabled: false

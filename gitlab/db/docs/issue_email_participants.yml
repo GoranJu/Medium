@@ -1,0 +1,21 @@
+---
+table_name: issue_email_participants
+classes:
+- IssueEmailParticipant
+feature_categories:
+- service_desk
+description: Email addresses for non-GitLab users added to issues as participants
+introduced_by_url: https://gitlab.com/gitlab-org/gitlab/-/merge_requests/42943
+milestone: '13.5'
+gitlab_schema: gitlab_main_cell
+desired_sharding_key:
+  namespace_id:
+    references: namespaces
+    backfill_via:
+      parent:
+        foreign_key: issue_id
+        table: issues
+        sharding_key: namespace_id
+        belongs_to: issue
+table_size: small
+desired_sharding_key_migration_job_name: BackfillIssueEmailParticipantsNamespaceId

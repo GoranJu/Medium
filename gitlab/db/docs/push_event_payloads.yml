@@ -1,0 +1,12 @@
+---
+table_name: push_event_payloads
+classes:
+- PushEventPayload
+feature_categories:
+- source_code_management
+description: Stores log of push events
+introduced_by_url: https://gitlab.com/gitlab-org/gitlab-foss/-/merge_requests/12463
+milestone: '9.5'
+gitlab_schema: gitlab_main
+sharding_key_issue_url: https://gitlab.com/gitlab-org/gitlab/-/issues/462802
+table_size: over_limit

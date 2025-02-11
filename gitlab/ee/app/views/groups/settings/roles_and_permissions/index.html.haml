@@ -1,0 +1,5 @@
+- page_title _('Roles and permissions')
+
+= render_if_exists 'shared/promotions/promote_planner_role'
+#js-roles-and-permissions{ data: member_roles_data(@group) }
+  = gl_loading_icon(css_class: 'gl-my-5', size: 'md')

@@ -1,0 +1,9 @@
+---
+name: dependency_scanning_for_pipelines_with_cyclonedx_reports
+feature_issue_url: https://gitlab.com/gitlab-org/gitlab/-/issues/490334
+introduced_by_url: https://gitlab.com/gitlab-org/gitlab/-/merge_requests/171019
+rollout_issue_url: https://gitlab.com/gitlab-org/gitlab/-/issues/490332
+milestone: '17.6'
+group: group::composition analysis
+type: beta
+default_enabled: false

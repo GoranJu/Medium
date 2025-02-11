@@ -1,0 +1,5 @@
+mutation createMemberRole($input: MemberRoleCreateInput!) {
+  memberRoleSave: memberRoleCreate(input: $input) {
+    errors
+  }
+}

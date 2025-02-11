@@ -1,0 +1,9 @@
+---
+name: vulnerabilities_as_webhook_events
+feature_issue_url: https://gitlab.com/gitlab-org/gitlab/-/issues/366770
+introduced_by_url: https://gitlab.com/gitlab-org/gitlab/-/merge_requests/169701
+rollout_issue_url: https://gitlab.com/gitlab-org/gitlab/-/issues/499996
+milestone: '17.7'
+group: group::prodsec
+type: beta
+default_enabled: false

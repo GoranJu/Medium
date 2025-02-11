@@ -1,0 +1,34 @@
+#import "ee/environments/graphql/fragments/deployment_approval_data.fragment.graphql"
+#import "~/graphql_shared/fragments/user.fragment.graphql"
+
+fragment ApprovalSummary on Deployment {
+  iid
+  approvalSummary {
+    status
+    totalPendingApprovalCount
+    totalRequiredApprovals
+    rules {
+      group {
+        id
+        name
+        webUrl
+      }
+      user {
+        ...User
+      }
+      accessLevel {
+        stringValue
+      }
+      approvedCount
+      requiredApprovals
+      pendingApprovalCount
+      approvals {
+        ...DeploymentApprovalData
+      }
+      canApprove
+    }
+  }
+  userPermissions {
+    approveDeployment
+  }
+}

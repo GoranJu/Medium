@@ -1,0 +1,21 @@
+- page_title s_('Trial|Start your free Ultimate and GitLab Duo Enterprise trial')
+
+- content_for :page_specific_javascripts do
+  = render 'layouts/google_tag_manager_head'
+  = render 'layouts/one_trust'
+= render 'layouts/google_tag_manager_body'
+
+.gl-flex.gl-flex-col.md:gl-flex-row.gl-items-center.gl-justify-center
+  .sm:gl-m-8.gl-max-w-80
+    %h2.gl-mt-0
+      = title_text
+
+    %p.gl-text-subtle.gl-text-lg
+      = s_('Trial|Please provide the following information to start your trial.')
+
+    = before_form_content
+
+    #js-trial-create-lead-form{ data: form_data }
+
+  .gl-w-48.gl-m-7
+    = image_tag 'illustrations/saas-trial-illustration.svg', alt: 'Trial illustration', class: 'gl-hidden md:gl-inline'

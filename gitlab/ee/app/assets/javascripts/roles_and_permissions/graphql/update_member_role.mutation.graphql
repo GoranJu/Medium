@@ -1,0 +1,5 @@
+mutation updateMemberRole($input: MemberRoleUpdateInput!) {
+  memberRoleSave: memberRoleUpdate(input: $input) {
+    errors
+  }
+}

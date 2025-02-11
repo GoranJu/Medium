@@ -1,0 +1,19 @@
+- return if group.marked_for_deletion?
+- remove_form_id = local_assigns.fetch(:remove_form_id, nil)
+- date = permanent_deletion_date_formatted(group, Time.now.utc)
+- linked_configurations = security_configurations_preventing_group_deletion(group)
+
+= render Pajamas::CardComponent.new(body_options: { class: 'gl-bg-red-50' }) do |c|
+  - c.with_header do
+    .gl-flex.gl-grow
+      %h4.gl-text-base.gl-leading-24.gl-m-0.gl-text-red-500= _('Delete group')
+
+  - c.with_body do
+    = form_tag(group, method: :delete, id: remove_form_id) do
+      - if linked_configurations.empty?
+        %p
+          = html_escape(_("This action will place this group, including its subgroups and projects, in a pending deletion state for %{deletion_delayed_period} days, and delete it permanently on %{date}.")) % { date: tag.strong(date), deletion_delayed_period: deletion_adjourned_period }
+
+        = render 'groups/settings/remove_button', group: group, remove_form_id: remove_form_id
+      - else
+        = render_if_exists 'groups/settings/remove_button_with_security_policies', group: group, remove_form_id: remove_form_id, linked_configurations: linked_configurations

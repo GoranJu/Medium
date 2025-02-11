@@ -1,0 +1,16 @@
+{
+  "description": "Zoekt node metadata",
+  "type": "object",
+  "properties": {
+    "name": {
+      "type": "string"
+    },
+    "task_count": {
+      "type": "integer"
+    },
+    "concurrency": {
+      "type": "integer"
+    }
+  },
+  "additionalProperties": true
+}

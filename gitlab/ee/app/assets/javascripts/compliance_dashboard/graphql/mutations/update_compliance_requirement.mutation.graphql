@@ -1,0 +1,11 @@
+mutation updateComplianceRequirement($input: UpdateComplianceRequirementInput!) {
+  updateComplianceRequirement(input: $input) {
+    requirement {
+      id
+      name
+      description
+      controlExpression
+    }
+    errors
+  }
+}

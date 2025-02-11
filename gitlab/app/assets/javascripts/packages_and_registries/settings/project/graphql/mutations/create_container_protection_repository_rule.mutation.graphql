@@ -1,0 +1,12 @@
+mutation createContainerProtectionRepositoryRule(
+  $input: CreateContainerProtectionRepositoryRuleInput!
+) {
+  createContainerProtectionRepositoryRule(input: $input) {
+    containerProtectionRepositoryRule {
+      id
+      repositoryPathPattern
+      minimumAccessLevelForPush
+    }
+    errors
+  }
+}

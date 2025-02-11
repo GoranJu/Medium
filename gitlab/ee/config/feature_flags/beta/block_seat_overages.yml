@@ -1,0 +1,9 @@
+---
+name: block_seat_overages
+feature_issue_url: https://gitlab.com/groups/gitlab-org/-/epics/12841
+introduced_by_url: https://gitlab.com/gitlab-org/gitlab/-/issues/442540
+rollout_issue_url: https://gitlab.com/gitlab-org/gitlab/-/issues/442718
+milestone: '16.10'
+group: group::utilization
+type: beta
+default_enabled: true

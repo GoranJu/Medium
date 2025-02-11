@@ -1,0 +1,21 @@
+---
+table_name: design_user_mentions
+classes:
+- DesignUserMention
+feature_categories:
+- team_planning
+description: User mentions in content related to designs
+introduced_by_url: https://gitlab.com/gitlab-org/gitlab/-/merge_requests/19009
+milestone: '12.6'
+gitlab_schema: gitlab_main_cell
+desired_sharding_key:
+  namespace_id:
+    references: namespaces
+    backfill_via:
+      parent:
+        foreign_key: design_id
+        table: design_management_designs
+        sharding_key: namespace_id
+        belongs_to: design
+table_size: small
+desired_sharding_key_migration_job_name: BackfillDesignUserMentionsNamespaceId

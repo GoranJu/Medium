@@ -1,0 +1,9 @@
+---
+name: security_policy_custom_roles
+feature_issue_url: https://gitlab.com/groups/gitlab-org/-/epics/13550
+introduced_by_url: https://gitlab.com/gitlab-org/gitlab/-/merge_requests/173570
+rollout_issue_url: https://gitlab.com/gitlab-org/gitlab/-/issues/505742
+milestone: '17.7'
+group: group::security policies
+type: wip
+default_enabled: false

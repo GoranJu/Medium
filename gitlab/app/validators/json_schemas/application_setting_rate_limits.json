@@ -1,0 +1,98 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "description": "Application rate limits",
+  "type": "object",
+  "additionalProperties": false,
+  "properties": {
+    "concurrent_bitbucket_import_jobs_limit": {
+      "type": "integer",
+      "minimum": 1,
+      "description": "Maximum number of simultaneous import jobs for Bitbucket Cloud importer"
+    },
+    "concurrent_bitbucket_server_import_jobs_limit": {
+      "type": "integer",
+      "minimum": 1,
+      "description": "Maximum number of simultaneous import jobs for Bitbucket Server importer"
+    },
+    "concurrent_github_import_jobs_limit": {
+      "type": "integer",
+      "minimum": 1,
+      "description": "Maximum number of simultaneous import jobs for GitHub importer"
+    },
+    "concurrent_relation_batch_export_limit": {
+      "type": "integer",
+      "minimum": 1,
+      "description": "Maximum number of simultaneous batch export jobs to process"
+    },
+    "create_organization_api_limit": {
+      "type": "integer",
+      "minimum": 0,
+      "description": "Number of requests allowed to the POST /api/v4/organizations API."
+    },
+    "group_api_limit": {
+      "type": "integer",
+      "minimum": 0,
+      "description": "Number of requests allowed to the GET /api/v4/groups/:id API."
+    },
+    "group_invited_groups_api_limit": {
+      "type": "integer",
+      "minimum": 0,
+      "description": "Number of requests allowed to the GET /api/v4/groups/:id/invited_groups API."
+    },
+    "group_projects_api_limit": {
+      "type": "integer",
+      "minimum": 0,
+      "description": "Number of requests allowed to the GET /api/v4/groups/:id/projects API."
+    },
+    "group_shared_groups_api_limit": {
+      "type": "integer",
+      "minimum": 0,
+      "description": "Number of requests allowed to the GET /api/v4/groups/:id/groups/shared API."
+    },
+    "groups_api_limit": {
+      "type": "integer",
+      "minimum": 0,
+      "description": "Number of requests allowed to the GET /api/v4/groups API."
+    },
+    "project_api_limit": {
+      "type": "integer",
+      "minimum": 0,
+      "description": "Number of requests allowed to the GET /api/v4/projects/:id API."
+    },
+    "project_invited_groups_api_limit": {
+      "type": "integer",
+      "minimum": 0,
+      "description": "Number of requests allowed to the GET /api/v4/projects/:id/invited_groups API."
+    },
+    "projects_api_limit": {
+      "type": "integer",
+      "minimum": 0,
+      "description": "Number of requests allowed to the GET /api/v4/projects API."
+    },
+    "user_contributed_projects_api_limit": {
+      "type": "integer",
+      "minimum": 0,
+      "description": "Number of requests allowed to the GET /api/v4/users/:user_id/contributed_projects API."
+    },
+    "user_projects_api_limit": {
+      "type": "integer",
+      "minimum": 0,
+      "description": "Number of requests allowed to the GET /api/v4/users/:user_id/projects API."
+    },
+    "user_starred_projects_api_limit": {
+      "type": "integer",
+      "minimum": 0,
+      "description": "Number of requests allowed to the GET /api/v4/users/:user_id/starred_projects."
+    },
+    "members_delete_limit": {
+      "type": "integer",
+      "minimum": 0,
+      "description": "Number of project or group members a user can delete per minute."
+    },
+    "downstream_pipeline_trigger_limit_per_project_user_sha": {
+      "type": "integer",
+      "minimum": 0,
+      "description": "Maximum number of downstream pipelines that can be triggered per minute (for a given project, user, and commit)."
+    }
+  }
+}

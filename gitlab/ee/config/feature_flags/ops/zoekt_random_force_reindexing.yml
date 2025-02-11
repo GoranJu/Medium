@@ -1,0 +1,8 @@
+---
+name: zoekt_random_force_reindexing
+introduced_by_url: https://gitlab.com/gitlab-org/gitlab/-/merge_requests/140136
+rollout_issue_url: https://gitlab.com/gitlab-org/gitlab/-/issues/435766
+milestone: '16.8'
+type: ops
+group: group::global search
+default_enabled: true

@@ -1,0 +1,22 @@
+---
+table_name: group_wiki_repository_states
+description: Separate table for group wiki verification states
+introduced_by_url: https://gitlab.com/gitlab-org/gitlab/-/merge_requests/126753
+milestone: '16.3'
+feature_categories:
+- geo_replication
+classes:
+- Geo::GroupWikiRepositoryState
+gitlab_schema: gitlab_main_cell
+desired_sharding_key:
+  group_id:
+    references: namespaces
+    backfill_via:
+      parent:
+        foreign_key: group_wiki_repository_id
+        table: group_wiki_repositories
+        table_primary_key: group_id
+        sharding_key: group_id
+        belongs_to: group_wiki_repository
+table_size: small
+desired_sharding_key_migration_job_name: BackfillGroupWikiRepositoryStatesGroupId

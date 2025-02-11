@@ -1,0 +1,21 @@
+---
+table_name: packages_conan_file_metadata
+classes:
+- Packages::Conan::FileMetadatum
+feature_categories:
+- package_registry
+description: Conan package file metadata
+introduced_by_url: https://gitlab.com/gitlab-org/gitlab/-/merge_requests/16418
+milestone: '12.5'
+gitlab_schema: gitlab_main_cell
+desired_sharding_key:
+  project_id:
+    references: projects
+    backfill_via:
+      parent:
+        foreign_key: package_file_id
+        table: packages_package_files
+        sharding_key: project_id
+        belongs_to: package_file
+    awaiting_backfill_on_parent: true
+table_size: small

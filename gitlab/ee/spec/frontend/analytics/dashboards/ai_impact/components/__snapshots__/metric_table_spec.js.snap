@@ -1,0 +1,496 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Metric table for the change_failure_rate table row when the data is loaded renders the metric values 1`] = `
+"Change failure rate  
+    Percentage of deployments that cause an incident in production.
+    
+      Go to docs
+      
+        20.0%
+       
+        40.0%
+       
+        60.0%
+       
+        20.0%
+       
+        40.0%
+       
+        60.0%
+       
+  100.0%
+    %"
+`;
+
+exports[`Metric table for the change_failure_rate table row when the data is loaded renders the sparkline chart with expected props 1`] = `
+{
+  "connectNulls": true,
+  "data": [
+    [
+      "Jan 6 - Feb 6",
+      20,
+    ],
+    [
+      "Feb 6 - Mar 6",
+      40,
+    ],
+    [
+      "Mar 6 - Apr 6",
+      60,
+    ],
+    [
+      "Apr 6 - May 6",
+      20,
+    ],
+    [
+      "May 6 - Jun 6",
+      40,
+    ],
+    [
+      "Jun 6 - Jul 6",
+      60,
+    ],
+  ],
+  "gradient": [
+    "#5252B5",
+    "#499767",
+  ],
+  "height": 30,
+  "showLastYValue": false,
+  "smooth": 0.2,
+  "tooltipLabel": "%",
+}
+`;
+
+exports[`Metric table for the code_suggestions_acceptance_rate table row when the data is loaded renders the metric values 1`] = `
+"Code Suggestions acceptance rate  
+    Monthly GitLab Duo Code Suggestions accepted / total Code Suggestions generated.
+    
+      Go to docs
+      
+        20.0%
+       3/15
+        42.9%
+       3/7
+        66.7%
+       10/15
+        50.0%
+       9/18
+        17.6%
+       3/17
+        33.3%
+       4/12
+  11.8%
+    %"
+`;
+
+exports[`Metric table for the code_suggestions_acceptance_rate table row when the data is loaded renders the sparkline chart with expected props 1`] = `
+{
+  "connectNulls": true,
+  "data": [
+    [
+      "Jan 6 - Feb 6",
+      20,
+    ],
+    [
+      "Feb 6 - Mar 6",
+      42.9,
+    ],
+    [
+      "Mar 6 - Apr 6",
+      66.7,
+    ],
+    [
+      "Apr 6 - May 6",
+      50,
+    ],
+    [
+      "May 6 - Jun 6",
+      17.6,
+    ],
+    [
+      "Jun 6 - Jul 6",
+      33.3,
+    ],
+  ],
+  "gradient": [
+    "#499767",
+    "#5252B5",
+  ],
+  "height": 30,
+  "showLastYValue": false,
+  "smooth": 0.2,
+  "tooltipLabel": "%",
+}
+`;
+
+exports[`Metric table for the code_suggestions_usage_rate table row when the data is loaded renders the metric values 1`] = `
+"Code Suggestions usage  
+    Monthly user engagement with GitLab Duo Code Suggestions. Percentage ratio calculated as monthly unique Code Suggestions users / total monthly unique code contributors.
+    
+      Go to docs
+      
+        5.0%
+       The usage data may be incomplete due to backend calculations starting after upgrade to GitLab 16.11. For more information, see epic 12978.
+        10.0%
+       The usage data may be incomplete due to backend calculations starting after upgrade to GitLab 16.11. For more information, see epic 12978.
+        25.0%
+       The usage data may be incomplete due to backend calculations starting after upgrade to GitLab 16.11. For more information, see epic 12978.
+        5.0%
+       The usage data may be incomplete due to backend calculations starting after upgrade to GitLab 16.11. For more information, see epic 12978.
+        10.0%
+       The usage data may be incomplete due to backend calculations starting after upgrade to GitLab 16.11. For more information, see epic 12978.
+        25.0%
+       The usage data may be incomplete due to backend calculations starting after upgrade to GitLab 16.11. For more information, see epic 12978.
+  100.0%
+    %"
+`;
+
+exports[`Metric table for the code_suggestions_usage_rate table row when the data is loaded renders the sparkline chart with expected props 1`] = `
+{
+  "connectNulls": true,
+  "data": [
+    [
+      "Jan 6 - Feb 6",
+      5,
+    ],
+    [
+      "Feb 6 - Mar 6",
+      10,
+    ],
+    [
+      "Mar 6 - Apr 6",
+      25,
+    ],
+    [
+      "Apr 6 - May 6",
+      5,
+    ],
+    [
+      "May 6 - Jun 6",
+      10,
+    ],
+    [
+      "Jun 6 - Jul 6",
+      25,
+    ],
+  ],
+  "gradient": [
+    "#499767",
+    "#5252B5",
+  ],
+  "height": 30,
+  "showLastYValue": false,
+  "smooth": 0.2,
+  "tooltipLabel": "%",
+}
+`;
+
+exports[`Metric table for the cycle_time table row when the data is loaded renders the metric values 1`] = `
+"Cycle time  
+    Median time from the earliest commit of a linked issue's merge request to when that issue is closed.
+    
+      Go to docs
+      
+        1.0 d
+       
+        2.0 d
+       
+        4.0 d
+       
+        1.0 d
+       
+        2.0 d
+       
+        4.0 d
+       
+  100.0%
+    days"
+`;
+
+exports[`Metric table for the cycle_time table row when the data is loaded renders the sparkline chart with expected props 1`] = `
+{
+  "connectNulls": true,
+  "data": [
+    [
+      "Jan 6 - Feb 6",
+      1,
+    ],
+    [
+      "Feb 6 - Mar 6",
+      2,
+    ],
+    [
+      "Mar 6 - Apr 6",
+      4,
+    ],
+    [
+      "Apr 6 - May 6",
+      1,
+    ],
+    [
+      "May 6 - Jun 6",
+      2,
+    ],
+    [
+      "Jun 6 - Jul 6",
+      4,
+    ],
+  ],
+  "gradient": [
+    "#5252B5",
+    "#499767",
+  ],
+  "height": 30,
+  "showLastYValue": false,
+  "smooth": 0.2,
+  "tooltipLabel": "days",
+}
+`;
+
+exports[`Metric table for the deployment_frequency table row when the data is loaded renders the metric values 1`] = `
+"Deployment frequency  
+    Average number of deployments to production per day. This metric measures how often value is delivered to end users.
+    
+      Go to docs
+      
+        10.0/d
+       
+        20.0/d
+       
+        40.0/d
+       
+        10.0/d
+       
+        20.0/d
+       
+        40.0/d
+       
+  100.0%
+    /day"
+`;
+
+exports[`Metric table for the deployment_frequency table row when the data is loaded renders the sparkline chart with expected props 1`] = `
+{
+  "connectNulls": true,
+  "data": [
+    [
+      "Jan 6 - Feb 6",
+      10,
+    ],
+    [
+      "Feb 6 - Mar 6",
+      20,
+    ],
+    [
+      "Mar 6 - Apr 6",
+      40,
+    ],
+    [
+      "Apr 6 - May 6",
+      10,
+    ],
+    [
+      "May 6 - Jun 6",
+      20,
+    ],
+    [
+      "Jun 6 - Jul 6",
+      40,
+    ],
+  ],
+  "gradient": [
+    "#499767",
+    "#5252B5",
+  ],
+  "height": 30,
+  "showLastYValue": false,
+  "smooth": 0.2,
+  "tooltipLabel": "/day",
+}
+`;
+
+exports[`Metric table for the duo_chat_usage_rate table row when the data is loaded renders the metric values 1`] = `
+"Duo Chat: Unique users  
+    Monthly user engagement with AI Code Suggestions. Percentage ratio calculated as monthly unique Code Suggestions users / total monthly unique code contributors.
+    
+      Go to docs
+      
+        20.0%
+       3/15
+        42.9%
+       3/7
+        66.7%
+       10/15
+        50.0%
+       9/18
+        17.6%
+       3/17
+        33.3%
+       4/12
+  11.8%
+    %"
+`;
+
+exports[`Metric table for the duo_chat_usage_rate table row when the data is loaded renders the sparkline chart with expected props 1`] = `
+{
+  "connectNulls": true,
+  "data": [
+    [
+      "Jan 6 - Feb 6",
+      20,
+    ],
+    [
+      "Feb 6 - Mar 6",
+      42.9,
+    ],
+    [
+      "Mar 6 - Apr 6",
+      66.7,
+    ],
+    [
+      "Apr 6 - May 6",
+      50,
+    ],
+    [
+      "May 6 - Jun 6",
+      17.6,
+    ],
+    [
+      "Jun 6 - Jul 6",
+      33.3,
+    ],
+  ],
+  "gradient": [
+    "#499767",
+    "#5252B5",
+  ],
+  "height": 30,
+  "showLastYValue": false,
+  "smooth": 0.2,
+  "tooltipLabel": "%",
+}
+`;
+
+exports[`Metric table for the lead_time table row when the data is loaded renders the metric values 1`] = `
+"Lead time  
+    Median time from issue created to issue closed.
+    
+      Go to docs
+      
+        1.0 d
+       
+        2.0 d
+       
+        4.0 d
+       
+        1.0 d
+       
+        2.0 d
+       
+        4.0 d
+       
+  100.0%
+    days"
+`;
+
+exports[`Metric table for the lead_time table row when the data is loaded renders the sparkline chart with expected props 1`] = `
+{
+  "connectNulls": true,
+  "data": [
+    [
+      "Jan 6 - Feb 6",
+      1,
+    ],
+    [
+      "Feb 6 - Mar 6",
+      2,
+    ],
+    [
+      "Mar 6 - Apr 6",
+      4,
+    ],
+    [
+      "Apr 6 - May 6",
+      1,
+    ],
+    [
+      "May 6 - Jun 6",
+      2,
+    ],
+    [
+      "Jun 6 - Jul 6",
+      4,
+    ],
+  ],
+  "gradient": [
+    "#5252B5",
+    "#499767",
+  ],
+  "height": 30,
+  "showLastYValue": false,
+  "smooth": 0.2,
+  "tooltipLabel": "days",
+}
+`;
+
+exports[`Metric table for the vulnerability_critical table row when the data is loaded renders the metric values 1`] = `
+"Critical vulnerabilities over time  
+    Number of critical vulnerabilities identified per month.
+    
+      Go to docs
+      
+        40
+       
+        20
+       
+        10
+       
+        40
+       
+        20
+       
+        10
+       
+  50.0%"
+`;
+
+exports[`Metric table for the vulnerability_critical table row when the data is loaded renders the sparkline chart with expected props 1`] = `
+{
+  "connectNulls": true,
+  "data": [
+    [
+      "Jan 6 - Feb 6",
+      40,
+    ],
+    [
+      "Feb 6 - Mar 6",
+      20,
+    ],
+    [
+      "Mar 6 - Apr 6",
+      10,
+    ],
+    [
+      "Apr 6 - May 6",
+      40,
+    ],
+    [
+      "May 6 - Jun 6",
+      20,
+    ],
+    [
+      "Jun 6 - Jul 6",
+      10,
+    ],
+  ],
+  "gradient": [
+    "#5252B5",
+    "#499767",
+  ],
+  "height": 30,
+  "showLastYValue": false,
+  "smooth": 0.2,
+  "tooltipLabel": "",
+}
+`;

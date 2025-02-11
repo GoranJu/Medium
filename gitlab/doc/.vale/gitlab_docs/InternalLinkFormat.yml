@@ -1,0 +1,14 @@
+---
+# Error: gitlab_docs.InternalLinkFormat
+#
+# Checks that internal link paths don't start with '/' or './'.
+#
+# For a list of all options, see https://vale.sh/docs/topics/styles/
+extends: existence
+message: "Edit the link so it does not start with '/' or './'."
+link: https://docs.gitlab.com/ee/development/documentation/styleguide/index.html#links
+vocab: false
+level: error
+scope: raw
+raw:
+  - '\[[^\]]+\]\(\.?\/(?!uploads|documentation).*?\)'

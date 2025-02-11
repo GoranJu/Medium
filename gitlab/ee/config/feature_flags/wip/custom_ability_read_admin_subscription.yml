@@ -1,0 +1,9 @@
+---
+name: custom_ability_read_admin_subscription
+feature_issue_url: https://gitlab.com/gitlab-org/gitlab/-/issues/507961
+introduced_by_url: https://gitlab.com/gitlab-org/gitlab/-/merge_requests/178230
+rollout_issue_url: https://gitlab.com/gitlab-org/gitlab/-/issues/514810
+milestone: '17.9'
+group: group::authorization
+type: wip
+default_enabled: false

@@ -1,0 +1,8 @@
+---
+title: Read-only access to admin dashboard
+name: read_admin_dashboard
+description: Read-only access to admin dashboard
+introduced_by_issue: https://gitlab.com/gitlab-org/gitlab/-/issues/501549
+introduced_by_mr: https://gitlab.com/gitlab-org/gitlab/-/merge_requests/171581
+feature_category: admin
+milestone: '17.6'

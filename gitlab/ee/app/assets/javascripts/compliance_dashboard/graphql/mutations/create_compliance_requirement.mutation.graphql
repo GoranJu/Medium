@@ -1,0 +1,11 @@
+mutation createComplianceRequirement($input: CreateComplianceRequirementInput!) {
+  createComplianceRequirement(input: $input) {
+    requirement {
+      id
+      name
+      description
+      controlExpression
+    }
+    errors
+  }
+}

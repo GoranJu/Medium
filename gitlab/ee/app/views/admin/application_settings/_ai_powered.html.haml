@@ -1,0 +1,7 @@
+- return if Gitlab.org_or_com?
+
+- visible_duo_pro = CloudConnector::AvailableServices.find_by_name(:code_suggestions)&.purchased?
+
+- return unless visible_duo_pro
+
+#js-ai-settings{ data: admin_ai_general_settings_helper_data }

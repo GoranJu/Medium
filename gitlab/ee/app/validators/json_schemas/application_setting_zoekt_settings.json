@@ -1,0 +1,32 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "description": "Application zoekt settings",
+  "type": "object",
+  "additionalProperties": false,
+  "properties": {
+    "zoekt_auto_delete_lost_nodes": {
+      "type": "boolean",
+      "description": "If lost nodes and related records should get automatically deleted"
+    },
+    "zoekt_auto_index_root_namespace": {
+      "type": "boolean",
+      "description": "If all root namespaces need to be indexed automatically for the instance"
+    },
+    "zoekt_indexing_enabled": {
+      "type": "boolean",
+      "description": "If zoekt indexing is enabled for the instance"
+    },
+    "zoekt_indexing_paused": {
+      "type": "boolean",
+      "description": "If zoekt indexing is paused for the instance"
+    },
+    "zoekt_search_enabled": {
+      "type": "boolean",
+      "description": "If zoekt search is enabled for the instance"
+    },
+    "zoekt_cpu_to_tasks_ratio": {
+      "type": "number",
+      "description": "The ratio between number of concurrent tasks and number of CPUs"
+    }
+  }
+}

@@ -1,0 +1,13 @@
+- advantages = [s_('DuoProTrial|Code completion and code generation with Code Suggestions')]
+- advantages << s_('DuoProTrial|Test Generation')
+- advantages << s_('DuoProTrial|Code Refactoring')
+- advantages << s_('DuoProTrial|Code Explanation')
+- advantages << s_('DuoProTrial|Chat within the IDE')
+- advantages << s_('DuoProTrial|Organizational user controls')
+
+= render GitlabSubscriptions::TrialAdvantagesComponent.new do |c|
+  - c.with_header do
+    = s_('DuoProTrial|GitLab Duo Pro is designed to make teams more efficient throughout the software development lifecycle with:')
+  - c.with_advantages(advantages)
+  - c.with_footer do
+    = (s_('DuoProTrial|GitLab Duo Pro is only available for purchase for Premium and Ultimate users.'))

@@ -1,0 +1,9 @@
+---
+name: asynchronous_dependency_export_delivery_for_projects
+feature_issue_url: https://gitlab.com/gitlab-org/gitlab/-/issues/513149
+introduced_by_url: https://gitlab.com/gitlab-org/gitlab/-/merge_requests/178046
+rollout_issue_url: https://gitlab.com/gitlab-org/gitlab/-/issues/513342
+milestone: '17.9'
+group: group::security insights
+type: gitlab_com_derisk
+default_enabled: false

@@ -1,0 +1,12 @@
+---
+description: Data being out of sync between epics and work items for any of the basic epic attributes.
+internal_events: true
+action: epic_sync_mismatch_base_attributes
+product_group: product_planning
+milestone: '17.6'
+identifiers:
+  - namespace
+introduced_by_url: https://gitlab.com/gitlab-org/gitlab/-/merge_requests/172416/
+tiers:
+  - premium
+  - ultimate

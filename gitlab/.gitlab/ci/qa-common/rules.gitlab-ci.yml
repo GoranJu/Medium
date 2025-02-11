@@ -1,0 +1,127 @@
+include:
+  - local: .gitlab/ci/rules.gitlab-ci.yml
+
+# FF changes
+.feature-flags-set: &feature-flags-set
+  if: $FEATURE_FLAGS =~ /enabled|disabled/
+
+# Run the job on master pipeline
+.default-branch: &default-branch
+  if: '$CI_COMMIT_BRANCH == $CI_DEFAULT_BRANCH'
+
+# Process test results (notify failure to slack, create test session report, relate test failures)
+.process-test-results: &process-test-results
+  if: $PROCESS_TEST_RESULTS == "true"
+
+.not-canonical-project: &not-canonical-project
+  if: '$CI_PROJECT_PATH != "gitlab-org/gitlab" && $CI_PROJECT_PATH != "gitlab-cn/gitlab"'
+
+# If Schedule pipeline
+.if-schedule-pipeline: &if-schedule-pipeline
+  if: '$CI_COMMIT_BRANCH == $CI_DEFAULT_BRANCH && $SCHEDULE_TYPE == "maintenance"'
+
+.never-if-skip-omnibus-trigger: &never-if-skip-omnibus-trigger
+  if: '$SKIP_OMNIBUS_TRIGGER == "true"'
+  when: never
+
+# Selective test execution against omnibus instance have following execution scenarios:
+#   * only e2e spec files changed - runs only changed specs
+#   * qa framework changes - runs full test suite
+#   * feature flag changed - runs full test suite with base gitlab instance configuration with both ff states
+#   * quarantined e2e spec - skips execution of e2e tests by creating a no-op pipeline
+
+# ------------------------------------------
+# Prepare
+# ------------------------------------------
+.rules:prepare:
+  rules:
+    - when: always
+
+.rules:download-knapsack:
+  rules:
+    - when: always
+
+.rules:trigger-omnibus:
+  rules:
+    - *never-if-skip-omnibus-trigger
+    - if: '$FOSS_ONLY != "1"'
+
+.rules:trigger-omnibus as-if-foss:
+  rules:
+    - *never-if-skip-omnibus-trigger
+    - if: '$FOSS_ONLY == "1"'
+
+# ------------------------------------------
+# Test
+# ------------------------------------------
+.rules:test:manual:
+  rules:
+    - when: manual
+      allow_failure: true
+      variables:
+        QA_TESTS: ""
+
+.rules:test:manual-except-default-branch:
+  rules:
+    - *default-branch
+    - !reference [.rules:test:manual, rules]
+
+.rules:test:feature-flags-set:
+  rules:
+    - *feature-flags-set
+
+.rules:test:ce-only:
+  rules:
+    - if: $FOSS_ONLY != "1"
+      when: never
+
+.rules:test:ee-only:
+  rules:
+    - if: $FOSS_ONLY == "1"
+      when: never
+
+.rules:test:update:
+  rules:
+    # skip upgrade jobs if gitlab version is not in semver compatible format
+    # these jobs need gitlab version because we can't reliably detect it from just the image
+    - if: $GITLAB_SEMVER_VERSION !~ /^\d+\.\d+\.\d+/
+      when: never
+    # update jobs are only relevant in testing app updates that can be affected by code changes only
+    # by checking code patterns, skip running job on changes that can't affect the outcome
+    - !reference [.qa:rules:code-merge-request, rules]
+    - *default-branch
+
+.rules:test:never-schedule-pipeline:
+  rules:
+    - <<: *if-schedule-pipeline
+      when: never
+
+.rules:test:smoke-for-omnibus-mr:
+  rules:
+    - if: '$CI_PROJECT_NAME == "omnibus-gitlab" && $PIPELINE_TYPE =~ /TRIGGERED_(CE|EE)_PIPELINE/ && $QA_OMNIBUS_MR_TESTS == "only-smoke"'
+      variables:
+        QA_RSPEC_TAGS: "--tag smoke --tag ~orchestrated --tag ~skip_live_env"
+    - if: '$CI_PROJECT_NAME == "omnibus-gitlab" && $PIPELINE_TYPE =~ /TRIGGERED_(CE|EE)_PIPELINE/ && $QA_OMNIBUS_MR_TESTS == "except-smoke"'
+      variables:
+        QA_RSPEC_TAGS: "--tag ~smoke --tag ~orchestrated --tag ~skip_live_env"
+
+# ------------------------------------------
+# Report
+# ------------------------------------------
+.rules:report:allure-report:
+  rules:
+    - if: $SKIP_ALLURE_REPORT == "true"
+      when: never
+    - when: always
+
+.rules:report:process-results:
+  rules:
+    - <<: *not-canonical-project
+      when: never
+    - *process-test-results
+
+.rules:report:upload-test-runtime-data:
+  rules:
+    - <<: *not-canonical-project
+      when: never
+    - *default-branch

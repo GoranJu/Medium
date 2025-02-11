@@ -1,0 +1,31 @@
+fragment WorkItemTypeFragment on WorkItemType {
+  id
+  name
+  iconName
+  supportedConversionTypes {
+    id
+    name
+  }
+  widgetDefinitions {
+    type
+    ... on WorkItemWidgetDefinitionAssignees {
+      allowsMultipleAssignees
+      canInviteMembers
+    }
+    ... on WorkItemWidgetDefinitionLabels {
+      allowsScopedLabels
+    }
+    ... on WorkItemWidgetDefinitionWeight {
+      editable
+      rollUp
+    }
+    ... on WorkItemWidgetDefinitionHierarchy {
+      allowedChildTypes {
+        nodes {
+          id
+          name
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,12 @@
+query getRunnerUsageByProject($runnerType: CiRunnerType, $fullPath: ID) {
+  runnerUsageByProject(runnerType: $runnerType, fullPath: $fullPath, projectsLimit: 5) {
+    project {
+      id
+      name
+      nameWithNamespace
+      avatarUrl
+      webUrl
+    }
+    ciMinutesUsed
+  }
+}

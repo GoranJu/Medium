@@ -1,0 +1,9 @@
+---
+name: duo_chat_drop_redis_storage
+feature_issue_url: https://gitlab.com/gitlab-org/gitlab/-/issues/501149
+introduced_by_url: https://gitlab.com/gitlab-org/gitlab/-/merge_requests/178990
+rollout_issue_url: https://gitlab.com/gitlab-org/gitlab/-/issues/514898
+milestone: '17.9'
+group: group::duo chat
+type: gitlab_com_derisk
+default_enabled: false

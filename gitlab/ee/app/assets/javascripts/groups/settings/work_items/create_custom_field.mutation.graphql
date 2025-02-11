@@ -1,0 +1,20 @@
+mutation createCustomField(
+  $groupPath: ID!
+  $fieldType: CustomFieldType!
+  $name: String!
+  $selectOptions: [CustomFieldSelectOptionInput!]
+) {
+  customFieldCreate(
+    input: {
+      groupPath: $groupPath
+      fieldType: $fieldType
+      name: $name
+      selectOptions: $selectOptions
+    }
+  ) {
+    customField {
+      id
+    }
+    errors
+  }
+}
